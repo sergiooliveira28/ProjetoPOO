@@ -1,55 +1,17 @@
 # ImOObiliaria
 Um projeto da treta feito por nada mais nada menos que o grande Mossoró e o seu companheiro Sleep Dogg
 
-Fala aí ó Sr. Carlos Silva..
+# 20/05 (sexta-feira) - A fase de entregas encerra às 24h.
+
+# 23/05 a 31/05 - Discussão dos trabalhos
+
+# _________   Relatório | 16 Maio  _____________
+
+Meti uma pasta com o relatório... mete aí a tua foto quando puderes...
 
 
-# _____________  Classe Teste  _________________
+# ________   Aviso  |  11 Maio    __________
 
-
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import java.util.Set;
-
-public class Testes
-{
-    private Imoobiliaria imo;
-    private Vendedor v;
-    private Terreno t;
-    @Test
-    public void mainTest() {
-        imo = new Imoobiliaria();
-        try {
-            imo.iniciaSessao("",null);  // FALHA LOGO AQUI
-			fail();
-        } catch(SemAutorizacaoException e) {
-            
-        } catch(Exception e) {
-            fail();
-        }
-        
-        try {
-            v = new Vendedor();  // Preencher parÃ¢metros do construtor
-            imo.registarUtilizador(v);
-        } catch(Exception e) {
-            fail();
-        }
-        
-        String email = v.getEmail();
-        String password = v.getPassword();
-        
-        try {
-            imo.iniciaSessao(email, password);
-        } catch(Exception e) {
-            fail();
-        }
-        
-}
-
-
-# ________   Aviso 11 Maio    __________
 Caros alunos,
 
 A classe de testes já foi disponibilizada, tendo sofrido hoje uma pequena actualização.
@@ -62,4 +24,16 @@ Bom trabalho,
 
 Creissac
 
+# _______ Classe Teste 9 Maio _____________
+
+    public void mainTest() {
+        imo = new Imoobiliaria();
+        try {
+            imo.iniciaSessao("",null);  // FALHA LOGO AQUI
+			fail();
+        } catch(SemAutorizacaoException e) {
+            
+        } catch(Exception e) {
+            fail();
+        }
 
