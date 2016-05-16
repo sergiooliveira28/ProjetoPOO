@@ -652,7 +652,7 @@ public class ImOObiliaria
                     if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("");}
                     System.out.println("- Morada: ");
                     morada = Input.lerString();
-                    System.out.println("- Preço Pedidoc: ");
+                    System.out.println("- Preço Pedido(Euros): ");
                     precoPedido= Input.lerDouble();
                     System.out.println("- Preço Minimo(Euros): ");
                     precoMinimo= Input.lerDouble();
@@ -674,7 +674,7 @@ public class ImOObiliaria
                     numeroPorta = Input.lerInt();
                     Moradia a = new Moradia (estado,morada,precoPedido,precoMinimo,tipo,areaImplantacao,areaTotal,areaTerreno,numeroQuartos,numeroWC,numeroPorta);
                     erro= imobi.addImovel(a);
-
+                    
                     imobi.setFeed(imobi.getAtual().getNome() + " inseriu nos anúncios o imóvel " + escolha + " situado na seguinte morada: " + a.getMorada() + "\n");
                     
                 }

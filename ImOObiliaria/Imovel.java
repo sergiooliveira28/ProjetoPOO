@@ -43,6 +43,7 @@ public abstract class Imovel implements Serializable
     public String getMorada(){
         return this.morada;
     }
+    public String getId(){return this.morada;}
     
     public double getPrecoPedido(){
         return this.precoPedido;

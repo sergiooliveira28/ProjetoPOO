@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -47,15 +48,12 @@ import java.util.Iterator;
     }
     
     public void setImovelP(Imovel i){this.lstImoveisPort.add(i);}
-    public void setImovelV(Imovel i){this.lstImoveisVendidos.add(i);}    
-    
-    // SERGIO
+    public void setImovelV(Imovel i){System.out.println(i.toString());this.lstImoveisVendidos.add(i);}    
+   
     
     public void removerImovel (String i){
         getImob().remImovel(i);
     }
-    
-    // /SERGIO
     
     public Vendedor clone(){
         return new Vendedor(this);

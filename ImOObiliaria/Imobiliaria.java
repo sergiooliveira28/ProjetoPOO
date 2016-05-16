@@ -53,7 +53,7 @@ public class Imobiliaria implements Serializable
    public HashMap<String,Imovel> getImovel(){
        HashMap<String,Imovel> aux = new HashMap<String,Imovel>();
        for(Imovel l:imovel.values()){
-            aux.put(l.getMorada(),l.clone());
+            aux.put(l.getMorada(),l);
        }
        return aux;
    }
@@ -61,7 +61,7 @@ public class Imobiliaria implements Serializable
    public HashMap<String,Utilizadores> getUtilizadores(){
        HashMap<String,Utilizadores> aux = new HashMap<String,Utilizadores>();
        for(Utilizadores l:utilizadores.values()){
-            aux.put(l.getEmail(),l.clone());
+            aux.put(l.getEmail(),l);
        }
        return aux;
    }
@@ -131,15 +131,15 @@ public class Imobiliaria implements Serializable
         else{
                 for (Utilizadores u : this.utilizadores.values()){
                     if (email.equals(u.getEmail())&&password.equals(u.getPassword())&& u instanceof Vendedor) {
-                        atual = (Vendedor) u.clone(); erro=false;
+                        atual = (Vendedor) u; erro=false;
                     }
                     else if (email.equals(u.getEmail())&&password.equals(u.getPassword())&& u instanceof Comprador) {
-                        atual =  (Comprador) u.clone(); erro=false;
+                        atual =  (Comprador) u; erro=false;
                     } 
                 }
-                if (erro) {throw new UtilizadorInexistenteException("Utilizador n√£o encontrado ou palavra passe incorreta\n");}
+                if (erro) {throw new SemAutorizacaoException("Utilizador n√£o encontrado ou palavra passe incorreta\n");}
             }
-        }catch (UtilizadorInexistenteException e){System.out.println(e.getMessage());} 
+        } 
         catch (SemAutorizacaoException e){System.out.println(e.getMessage());} 
         return erro;
     }
@@ -151,6 +151,10 @@ public class Imobiliaria implements Serializable
    public boolean existeImovel(Imovel a) {
         return imovel.containsKey(a.getMorada());
    }
+    
+   public Map <String, Imovel> getImovel(String s, int n) {
+        return this.imovel;
+   }
    
    public boolean addImovel (Imovel i)throws ImovelExisteException{
         Vendedor vendedorAux = (Vendedor) atual;
@@ -158,12 +162,16 @@ public class Imobiliaria implements Serializable
         try {
             if (erro){ throw new ImovelExisteException("ImÛvel j· existe\n");}
             else {
-                   imovel.put(i.getMorada(),i.clone());
-                   vendedorAux.setImovelP(i.clone());
+                   imovel.put(i.getMorada(),i);
+                   vendedorAux.setImovelP(i);
             }
         }catch (ImovelExisteException e){System.out.println(e.getMessage());}
         atual = vendedorAux;
         return erro;
+   }
+   
+   public void registaImovel (Imovel i) throws ImovelExisteException{
+       addImovel(i);
    }
    
    public void remImovel (String i){
@@ -211,7 +219,7 @@ public class Imobiliaria implements Serializable
    }
    
    public void saveUtilizador(Utilizadores u){
-       this.utilizadores.put(u.getEmail(),u.clone());
+       this.utilizadores.put(u.getEmail(),u);
    }
     
    public boolean registarUtilizador (Utilizadores u) throws UtilizadorExistenteException{
@@ -219,7 +227,7 @@ public class Imobiliaria implements Serializable
         try {
            if (this.utilizadores.containsKey(u.getEmail())) {throw new UtilizadorExistenteException("");}
            else {
-               this.utilizadores.put(u.getEmail(),u.clone());erro=false;
+               this.utilizadores.put(u.getEmail(),u);erro=false;
             } 
        
        } catch (UtilizadorExistenteException e) {System.out.println(e.getMessage());}
@@ -256,14 +264,19 @@ public class Imobiliaria implements Serializable
    
    public Map<Imovel,Vendedor> getMapeamentoImoveis(){
        HashMap<Imovel,Vendedor> aux = new HashMap<Imovel,Vendedor>();
-       for(Utilizadores u: utilizadores.values()){
-           if(u instanceof Vendedor){
+       for(Utilizadores u : utilizadores.values()){
+           if (u instanceof Vendedor){
+               
+                   System.out.println("\n\n\n\n\n = = =  fhddhfhfdhdhdfhdhdh");
                Vendedor vendedorAux = (Vendedor) u;
-               for(Imovel i: vendedorAux.getImoveisP()){
-                   aux.put(i.clone() ,(Vendedor) u.clone());
+               System.out.println(vendedorAux.getImoveisP().toString());
+               System.out.println(vendedorAux.getImoveisV().toString());
+               for (Imovel i : vendedorAux.getImoveisP()){
+                   aux.put(i, vendedorAux);
                }
            }
        }
+       System.out.println(aux.isEmpty());
        return aux;
    }
 
@@ -289,6 +302,10 @@ public class Imobiliaria implements Serializable
         }
         }catch (ImovelExisteException e) {}
         atual = compradorAux;
+    }
+    
+    public void setFavorito(String morada) throws ImovelExisteException{
+        adicFavorito(morada);
     }
     
     public void listarFavorito () throws ImovelInexistenteException{
