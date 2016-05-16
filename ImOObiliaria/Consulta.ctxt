@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Consulta()
+comment1.params=
+comment1.target=java.lang.String\ getData()
+comment2.params=ddata
+comment2.target=void\ setData(java.lang.String)
+comment3.params=
+comment3.target=Imovel\ getImovel()
+comment4.params=ii
+comment4.target=void\ setImovel(Imovel)
+numComments=5

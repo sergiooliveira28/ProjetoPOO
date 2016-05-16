@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=estado\ morada\ precoPedido\ precoMinimo\ tiponegocio\ area\ wc\ numeroPorta
+comment0.target=Loja(java.lang.String,\ java.lang.String,\ double,\ double,\ java.lang.String,\ double,\ boolean,\ int)
+comment1.params=a
+comment1.target=Loja(Loja)
+comment2.params=
+comment2.target=java.lang.String\ getTipoNegocio()
+comment3.params=
+comment3.target=double\ getArea()
+comment4.params=
+comment4.target=boolean\ getWc()
+comment5.params=
+comment5.target=int\ getNumeroPorta()
+comment6.params=
+comment6.target=Loja\ clone()
+comment7.params=o
+comment7.target=boolean\ equals(java.lang.Object)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

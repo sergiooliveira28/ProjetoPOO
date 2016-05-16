@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=estado\ morada\ precoPedido\ precoMinimo\ tiponegocio\ area\ wc\ numeroPorta\ apartamento
+comment0.target=LojaHabitavel(java.lang.String,\ java.lang.String,\ double,\ double,\ java.lang.String,\ double,\ boolean,\ int,\ Apartamento)
+comment1.params=a
+comment1.target=LojaHabitavel(LojaHabitavel)
+comment2.params=
+comment2.target=Apartamento\ getApartamento()
+comment3.params=
+comment3.target=LojaHabitavel\ clone()
+comment4.params=
+comment4.target=boolean\ getHabitavel()
+comment5.params=o
+comment5.target=boolean\ equals(java.lang.Object)
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7
