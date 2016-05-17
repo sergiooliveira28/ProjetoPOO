@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Aposta()
+comment1.params=email\ limite\ incrementos\ minutos\ imovel
+comment1.target=Aposta(java.lang.String,\ double,\ double,\ double,\ Imovel)
+comment10.params=s
+comment10.target=void\ setIncrementos(double)
+comment11.params=i
+comment11.target=void\ setImovel(Imovel)
+comment2.params=
+comment2.target=java.lang.String\ getEmail()
+comment3.params=
+comment3.target=double\ getLimite()
+comment4.params=
+comment4.target=double\ getIncrementos()
+comment5.params=
+comment5.target=double\ getMinutos()
+comment6.params=
+comment6.target=Imovel\ getImovel()
+comment7.params=l
+comment7.target=void\ setLimite(double)
+comment8.params=s
+comment8.target=void\ setEmail(java.lang.String)
+comment9.params=s
+comment9.target=void\ setMinutos(double)
+numComments=12

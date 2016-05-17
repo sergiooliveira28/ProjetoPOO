@@ -101,4 +101,14 @@ public abstract class Imovel implements Serializable
         s.append("Preco Minimo: "+this.precoMinimo+"\n");
         return s.toString();
     }
+    
+    public String toStringParaCompradores(){
+        StringBuffer s = new StringBuffer();
+        s.append("\n-------------------------------\n");
+        s.append(" *** "+this.tipoImovel+" ***\n ");
+        s.append(" * Estado: "+this.estado+" *\n");
+        s.append("Morada: "+this.morada+"\n");
+        s.append("Preco Pedido: "+this.precoPedido+"\n");
+        return s.toString();
+    }
 }

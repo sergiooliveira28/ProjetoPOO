@@ -59,6 +59,11 @@ public class Comprador extends Utilizadores
         return aux;
     }
     
+    public ArrayList <Imovel> getFavoritosNaoOrdenados () //throws SemAutorizacaoException{
+    {
+        return this.lstImoveis;
+    }
+    
     public ArrayList <Imovel> getComprados () //throws SemAutorizacaoException{
     {
         ArrayList <Imovel> aux = new ArrayList <Imovel> ();
