@@ -4,16 +4,19 @@ public class Comprador extends Utilizadores
 {
     // instance variables
     private ArrayList<Imovel> lstImoveis;
+    private ArrayList<Imovel> lstImoveisComprados;
     
     //construtores
     public Comprador(){
         super();
         this.lstImoveis = new ArrayList<Imovel>();
+        this.lstImoveisComprados =new ArrayList<Imovel>();
     }
     
     public Comprador(String email,String nome,String password,String morada,String dataNascimento, Imobiliaria imob, boolean registado){
         super(email,nome,password,morada,dataNascimento,imob,registado);
         this.lstImoveis = new ArrayList<Imovel>();
+        this.lstImoveisComprados =new ArrayList<Imovel>();
     }
     
     public Comprador(Comprador a){
@@ -23,6 +26,8 @@ public class Comprador extends Utilizadores
         for(Imovel f: aux){
             lstImoveis.add(f.clone());
         }
+        
+        this.lstImoveisComprados = new ArrayList<Imovel>();
     }
     
     public ArrayList<Imovel> getImovel(){
@@ -31,6 +36,18 @@ public class Comprador extends Utilizadores
             aux.add(f.clone());
         }
         return aux;
+    }
+    
+    public ArrayList<Imovel> getImoveisComprados(){
+        ArrayList<Imovel> aux = new ArrayList<Imovel>();
+        for(Imovel f: lstImoveisComprados){
+            aux.add(f.clone());
+        }
+        return aux;
+    }
+    
+    public void setComprado (Imovel i){
+        this.lstImoveisComprados.add(i);
     }
     
     public TreeSet <Imovel> getFavoritos () //throws SemAutorizacaoException{
@@ -42,12 +59,21 @@ public class Comprador extends Utilizadores
         return aux;
     }
     
+    public ArrayList <Imovel> getComprados () //throws SemAutorizacaoException{
+    {
+        ArrayList <Imovel> aux = new ArrayList <Imovel> ();
+        
+        aux.addAll(lstImoveisComprados);
+        
+        return aux;
+    }
+    
     
     // ???
     public void comprarImovel (String idImovel){ 
         for (Map.Entry <String,Imovel> i : this.getImob().getImovel().entrySet()){
             if (i.getKey().equals(idImovel) && this.getRegistado())
-               i.getValue().setEstado("Vendido");
+               i.getValue().setEstado("Reservado");
         }
     }
         

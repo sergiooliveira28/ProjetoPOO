@@ -7,13 +7,14 @@ public abstract class Imovel implements Serializable
     private String tipoImovel;
     private String morada;
     private double precoPedido,precoMinimo;
-    
+    private int visitas;
     public Imovel(){
         estado = "N/A";
         tipoImovel = "N/A";
         morada = "N/A";
         precoPedido = 0.0;
         precoMinimo = 0.0;
+        visitas = 0;
     }
     
     public Imovel (String estado, String tipoImovel,String morada, double precoPedido, double precoMinimo){
@@ -30,6 +31,7 @@ public abstract class Imovel implements Serializable
         this.morada = i.getMorada();
         this.precoPedido = i.getPrecoPedido();
         this.precoMinimo = i.getPrecoMinimo();
+        this.visitas = i.getVisitas();
     }
     
     public String getEstado(){
@@ -53,6 +55,11 @@ public abstract class Imovel implements Serializable
         return this.precoMinimo;
     }
     
+    public int getVisitas(){
+        return this.visitas;
+    }
+    
+    
     public void setEstado(String s){
         this.estado = s;
     }
@@ -67,6 +74,12 @@ public abstract class Imovel implements Serializable
     
     public void setPrecoMinimo(double pm){
         this.precoMinimo = pm;
+    }
+    public void setVisitas(int vvisitas){
+        this.visitas = vvisitas;
+    }
+    public void incVisitas(){
+        this.visitas++;
     }
     
     public boolean equals(Object o){
@@ -84,8 +97,8 @@ public abstract class Imovel implements Serializable
         s.append(" *** "+this.tipoImovel+" ***\n ");
         s.append(" * Estado: "+this.estado+" *\n");
         s.append("Morada: "+this.morada+"\n");
-        s.append("Preço Pedido: "+this.precoPedido+"\n");
-        s.append("Preço Minimo: "+this.precoMinimo+"\n");
+        s.append("Preco Pedido: "+this.precoPedido+"\n");
+        s.append("Preco Minimo: "+this.precoMinimo+"\n");
         return s.toString();
     }
 }

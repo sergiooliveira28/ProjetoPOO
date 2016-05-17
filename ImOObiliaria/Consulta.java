@@ -1,18 +1,18 @@
 public class Consulta
 {
-    private String data;
-    private Imovel i;
+    private int contagem;
+    private Imovel imovel;
     
     public Consulta(){
-        this.data = "";
+        this.contagem = 0;
     }
     
-    public String getData(){return this.data;}
+    public int getContagem(){return this.contagem;}
     
-    public void setData(String ddata){this.data = ddata;}
+    public void setContagem(int ccontagem){this.contagem = ccontagem;}
     
-    public Imovel getImovel(){return this.i;}
-    public void setImovel(Imovel ii){this.i = ii;}
+    public Imovel getImovel(){return this.imovel;}
+    public void setImovel(Imovel ii){this.imovel = ii;}
     
     
 }

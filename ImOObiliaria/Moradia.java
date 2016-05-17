@@ -95,12 +95,12 @@ public class Moradia extends Imovel implements Pesquisas, Habitavel
         StringBuffer s = new StringBuffer();
         s.append(super.toString());
         s.append("Tipo: "+this.tipo+"\n");
-        s.append("Area ImplantaÃ§Ã£o: "+this.areaImplantacao+"\n");
+        s.append("Area Implantação: "+this.areaImplantacao+"\n");
         s.append("Area Total: "+this.areaTotal+"\n");
         s.append("Area Terreno: "+this.areaTerreno+"\n");
-        s.append("NÂº Quartos: "+this.numeroQuartos+"\n");
-        s.append("NÂº Wc's: "+this.numeroWC+"\n");
-        s.append("NÂº Porta: "+this.numeroPorta+"\n");
+        s.append("Nº Quartos: "+this.numeroQuartos+"\n");
+        s.append("Nº WC's: "+this.numeroWC+"\n");
+        s.append("Nº Porta: "+this.numeroPorta+"\n");
         s.append("-------------------------------");
         return s.toString();
     }

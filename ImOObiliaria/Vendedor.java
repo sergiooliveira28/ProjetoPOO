@@ -48,8 +48,7 @@ import java.util.Iterator;
     }
     
     public void setImovelP(Imovel i){this.lstImoveisPort.add(i);}
-    public void setImovelV(Imovel i){System.out.println(i.toString());this.lstImoveisVendidos.add(i);}    
-   
+    public void setImovelV(Imovel i){System.out.println(i.toString());this.lstImoveisVendidos.add(i);}   
     
     public void removerImovel (String i){
         getImob().remImovel(i);

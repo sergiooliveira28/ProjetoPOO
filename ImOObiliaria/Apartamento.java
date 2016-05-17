@@ -86,9 +86,9 @@ public class Apartamento extends Imovel implements Pesquisas, Habitavel
         s.append(super.toString());
         s.append("Tipo de Apartamento: "+this.tipo+"\n");
         s.append("Area Total: "+this.areaTotal+"\n");
-        s.append("NÂº de Wc's: "+this.numeroWC+"\n");
-        s.append("NÂº de Porta: "+this.numeroPorta+"\n");
-        s.append("NÂº de Andar: "+this.numeroAndar+"\n");
+        s.append("Nº de Wc's: "+this.numeroWC+"\n");
+        s.append("Nº de Porta: "+this.numeroPorta+"\n");
+        s.append("Nº de Andar: "+this.numeroAndar+"\n");
         s.append("Garagem: "+this.garagem+"\n");
         s.append("-------------------------------");
         return s.toString();

@@ -2,9 +2,9 @@
 comment0.params=
 comment0.target=Consulta()
 comment1.params=
-comment1.target=java.lang.String\ getData()
-comment2.params=ddata
-comment2.target=void\ setData(java.lang.String)
+comment1.target=int\ getContagem()
+comment2.params=ccontagem
+comment2.target=void\ setContagem(int)
 comment3.params=
 comment3.target=Imovel\ getImovel()
 comment4.params=ii

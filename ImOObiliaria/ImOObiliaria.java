@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 public class ImOObiliaria
 {
-    private static String aviso,aviso2 = "";
-    private static Leiloes leiloes;
+    private static String aviso,aviso2,aviso3 = "";
+    private static Leiloes leiloes = new Leiloes();
     private static Vendedor vendedorAux;
     private static Comprador compradorAux;
     private static Imobiliaria imobi = new Imobiliaria ();   
@@ -16,12 +16,12 @@ public class ImOObiliaria
 
     public static void main(String[] args)throws Exception{
         imobi.init();
-        int escolha,acabado=0;imobi.carregaDados("Imobiliaria.obj"); setAviso("Bem-vindo");      
+        int escolha,acabado=0;imobi.carregaDados("Imobiliaria.obj"); setAviso("Bem-vindo");setAvisoSessao("Não está registado. Crie já a sua conta.");   
         while (acabado != 1){
 
             System.out.println("\n\n\n\n\n = = =  I m O O b i l i á r i a  = = =\n");
-            System.out.println("<i> : "+ getAviso());
-            System.out.println("<i> : "+ getAviso2());
+            System.out.println(" : "+ getAviso());
+            System.out.println(" : "+ getAvisoSessao());
             menuInicio();
             escolha = Input.lerInt();
             switch (escolha){
@@ -55,6 +55,10 @@ public class ImOObiliaria
                     limparTexto();
                     mapeamentoImoveis();
                 break;
+                
+                case 8: 
+                    consultas();
+                    break;
                 case 0:
                     limparTexto();
                     acabado = sair();
@@ -77,8 +81,9 @@ public class ImOObiliaria
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n = = =  U t i l i z a d o r e s  = = =\n\n");
         
         while (acabado != 1){
-            System.out.println("<i> : "+ getAviso()); 
-            System.out.println("<i> : "+ getAviso2());
+            System.out.println(" : "+ getAviso()); 
+            System.out.println(" : "+ getAvisoSessao());
+            System.out.println(" : "+ getAvisoLeilao());
             menuUtilizadores();
             escolha= Input.lerInt();
             switch (escolha){
@@ -104,6 +109,8 @@ public class ImOObiliaria
                         vendedorAux = new Vendedor (email,nome,password,morada,dataNascimento,imobi,registado);
                         erro=imobi.registarUtilizador(vendedorAux);
                         setAviso("Vendedor criado");
+                        imobi.setFeed(nome + " criou um perfil de vendedor \n");
+                        
                     }
                     else if (tipo.equals("Comprador")){   
                         System.out.println("- Email: ");
@@ -120,6 +127,7 @@ public class ImOObiliaria
                         compradorAux = new Comprador (email,nome,password,morada,dataNascimento,imobi,registado);
                         erro=imobi.registarUtilizador(compradorAux);
                         setAviso("Comprador criado");
+                        imobi.setFeed(nome + " criou um perfil de comprador \n");
                     }
                     else {throw new UtilizadorExistenteException("Ocorreu um erro.");}
                     
@@ -137,7 +145,7 @@ public class ImOObiliaria
                     try{
                         erro=imobi.iniciaSessao(email,password);
                         if (erro) {throw new UtilizadorInexistenteException("Ocorreu um erro.");}
-                        else {setAviso("Sessão iniciada"); setAviso2("Utilizador atual: " + email);}
+                        else {setAviso("Sessão iniciada"); setAvisoSessao("Utilizador atual: " + email);}
                     } catch (UtilizadorInexistenteException e){setAviso(e.getMessage());}
                 break;
                 case 3:
@@ -150,7 +158,7 @@ public class ImOObiliaria
                     limparTexto();
                     imobi.fechaSessao();
                     setAviso("Terminou a sessão");
-                    setAviso2("");
+                    setAvisoSessao("");
                 break;
                 
                 case 0:
@@ -178,8 +186,9 @@ public class ImOObiliaria
                 System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n= = =  V e n d e d o r  = = =\n\n");
                 setAviso("Bem-vindo "+ imobi.getAtual().getNome());
                     while (acabado != 1){
-                        System.out.println("<i> : "+ getAviso()); 
-                        System.out.println("<i> : "+ getAviso2());
+                        System.out.println(" : "+ getAviso()); 
+                        System.out.println(" : "+ getAvisoSessao());
+                        System.out.println(" : "+ getAvisoLeilao());
                         menuVendedor();
                         escolha= Input.lerInt();
   
@@ -192,6 +201,7 @@ public class ImOObiliaria
                             case 2:
                                 limparTexto();
                                 insereImovel();
+                                imobi.setFeed("Foi inserido um novo imóvel à base de dados \n");
                                 limparTexto();
                             break;
                             case 3:
@@ -205,6 +215,7 @@ public class ImOObiliaria
                                     imobi.setFeed(imobi.getAtual().getNome() + " removeu dos anúncios o imóvel " + imobi.getImovel().get(morada).getEstado() + " situado na seguinte morada: " + morada + "\n");
                                     imobi.removeImovel(morada);
                                     setAviso("Imóvel removido");
+                                    imobi.setFeed("Foi removido um imóvel da base de dados \n");
                                 }else {throw new ImovelInexistenteException("Imóvel não existente");}
                             break;  
                             case 4: 
@@ -233,16 +244,22 @@ public class ImOObiliaria
                         morada = Input.lerString();
                         System.out.println("Qual é o novo estado que quer para " + morada + "?\n");
                         estado = Input.lerString();
-                        erro = imobi.alteraEstadoImovel(morada,estado);
-                        
-                        if (erro) setAviso ("estado de imóvel nÃ£o alterado");
-                        else {
+                        try{
+                            imobi.alteraEstadoImovel(morada,estado);
                             setAviso ("estado de imóvel alterado");
                             imobi.setFeed(imobi.getAtual().getNome() + " alterou o estado do imóvel para " + imobi.getImovel().get(morada).getEstado() + " situado na seguinte morada: " + morada + "\n");
-                        }
+                        }catch (ImovelInexistenteException e){setAviso("estado de imóvel nao alterado");}
+                       
                         
          
                         break;
+                        case 8:
+                            System.out.println("- Morada do imóvel para alteração do estado \"Reservado\" para \"Vendido\" \n");
+                            morada = Input.lerString();
+                            imobi.confirmarImovelComprado(morada);
+                            setAviso("Concluído");
+                            imobi.setFeed(imobi.getAtual().getNome() + " acabou de confirmar a venda do imóvel na seguinte morada: " + morada + " \n");
+                            break;
                         case 0:
                              limparTexto();
                              
@@ -270,9 +287,9 @@ public class ImOObiliaria
                setAviso("Bem-vindo "+ imobi.getAtual().getNome()); 
               
                while (acabado != 1){
-                   System.out.println("<i> : "+ getAviso()); 
-                   System.out.println("<i> : "+ getAviso2());
-                   
+                   System.out.println(" : "+ getAviso()); 
+                   System.out.println(" : "+ getAvisoSessao());
+                   System.out.println(" : "+ getAvisoLeilao());
                    menuComprador();
                    escolha= Input.lerInt();
                 
@@ -295,24 +312,34 @@ public class ImOObiliaria
                             limparTexto();
                             System.out.println("Insira a morada do imóvel que quer comprar\n");
                             morada = Input.lerString();
-                            imobi.comprarImovel(morada);
-                            
+                            try{
+                                imobi.comprarImovel(morada);
+                                setAviso("Imóvel reservado. O vendedor terá de confirmar a compra");
+                                imobi.setFeed(imobi.getAtual().getNome() + " reservou o imóvel na seguinte morada: " + morada + " \n");
+                            }catch (ImovelInexistenteException e){setAviso("Ocorreu um erro");}
                        break;
                        case 4:
                            limparTexto();
                            System.out.println("Insira a morada do imóvel que quer adicionar aos favoritos");morada = Input.lerString();
                            imobi.adicFavorito(morada);
+                           setAviso("");
                            limparTexto();
                        break;
                        case 5:
                            limparTexto();
                            imobi.listarFavorito();
+                           setAviso("");
                        break;
                        case 6:
                            limparTexto();System.out.println("Insira a morada do imóvel que quer remover dos favoritos");morada = Input.lerString();
                            imobi.removeFavorito(morada);
                            limparTexto();
                        break;
+                       case 7:
+                           imobi.listarComprados();
+                           System.out.println("\nENTER para continuar");Input.lerString();
+                           setAviso("Imóveis comprados listados");
+                           break;
                        case 0:
                              limparTexto();
                              
@@ -329,7 +356,7 @@ public class ImOObiliaria
                    
            }
            else throw new SemAutorizacaoException("Sem permissão");
-        } catch (SemAutorizacaoException e){System.out.println(e.getMessage());setAviso ("NÃ£o tem permissÃ£o para aceder a esta opção");}
+        } catch (SemAutorizacaoException e){System.out.println(e.getMessage());setAviso ("Não tem permissão para aceder a esta opção");}
     }
     
     // _______________________________ PESQUISAR _____________________________________________ 
@@ -341,9 +368,9 @@ public class ImOObiliaria
         
         while (acabado != 1){
             setAviso("");
-            System.out.println("<i> : "+ getAviso());
-            System.out.println("<i> : "+ getAviso2());
-             
+            System.out.println(" : "+ getAviso());
+            System.out.println(" : "+ getAvisoSessao());
+            System.out.println(" : "+ getAvisoLeilao());
             menuPesquisar(); 
             escolha= Input.lerInt();
             
@@ -438,8 +465,9 @@ public class ImOObiliaria
         }
     }
     
-    public static void leiloes(){
-        int escolha,acabado=0, m; String n;      
+    public static void leiloes() throws ImovelInexistenteException{
+        int escolha,acabado=0,m;
+        double limite,incrementos,minutos; String n,morada;      
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n= = =  L e i l õ e s  = = =\n\n");
         
         try{
@@ -448,46 +476,69 @@ public class ImOObiliaria
             setAviso("");
             
             while (acabado != 1){
-                System.out.println("<i> : "+ getAviso()); 
-                System.out.println("<i> : "+ getAviso2());
+                System.out.println(" : "+ getAviso()); 
+                System.out.println(" : "+ getAvisoSessao());
+                System.out.println(" : "+ getAvisoLeilao());
                 menuLeiloes(); 
                 escolha= Input.lerInt();
             
                 switch (escolha){
                     case 1:
                          limparTexto();
-                         if (imobi.getAtual() instanceof Vendedor){
-                             //leiloes.iniciaLeilao (im,horas)
+                         if (!leiloes.getEmExecucao()){
+                           if (imobi.getAtual() instanceof Vendedor){
+                              
+                             System.out.println("Indique a morada do imóvel que quer inserir para leilão\n");
+                             imobi.listarImovel(); 
+                             morada= Input.lerString();
+                             System.out.println("Por quantas horas estará este imóvel em leilão?\n");
+                             escolha= Input.lerInt();
+                             leiloes.iniciaLeilao (imobi.getImovel().get(morada),escolha);
+                             setAvisoLeilao();
+                             imobi.setFeed(imobi.getAtual().getNome() + " iniciou um leilão com uma duração de "+ escolha + " horas \n");
                             }
-                         else setAviso("Tem de ser um vendedor para efetuar esta operação");
+                           else setAviso("Tem de ser um vendedor para efetuar esta operação");
+                         }else setAviso("Já tem um leilão em execução!");
                          
                          break;
                     case 2:
                          limparTexto();
-                         if (imobi.getAtual() instanceof Comprador){
-                             //leiloes.adicionaComprador (idComprador ,double limite ,double incrementos ,double minutos )
+                         if (leiloes.getEmExecucao()){ 
+                             if (imobi.getAtual() instanceof Comprador){
+                             System.out.println("Está inscrito no leilão.\nLimite de dinheiro (em €)?\n");
+                             limite= Input.lerDouble();
+                             System.out.println("Incrementos ao longo do tempo (em €)?\n");
+                             incrementos= Input.lerDouble();
+                             System.out.println("De quantos em quantos minutos?\n");
+                             minutos= Input.lerDouble();
+                             leiloes.adicionaComprador (imobi.getAtual().getEmail(),limite ,incrementos ,minutos);
+                             setAviso("Boa sorte.");
                             }
-                         else  setAviso("Tem de ser um comprador para efetuar esta operação");
-                         
+                            else  setAviso("Tem de ser um comprador para efetuar esta operação");
+                         }else setAviso("Nenhum leilão ativo");
                          break;
                     case 3:
                         limparTexto();
-                         if (imobi.getAtual() instanceof Vendedor){
-                             /*
-                             compradorAux= leiloes.encerraLeilao();
-                             for (Utilizadores c : imobi.getUtilizadores().values()){
-                                 if (c.getEmail().equals(compradorAux.getEmail()) && c instanceof Comprador){
-                                     setAviso(c.getNome() + "ganhou o leilÃ£o");
-                                     imobi.setFeed("O comprador " + compradorAux.getNome() + " ganhou um imÃ³vel num leilÃ£o " + "\n");
-                                }
+                         if (leiloes.getEmExecucao()){ 
+                             if (imobi.getAtual() instanceof Vendedor){
+                                 compradorAux= leiloes.encerraLeilao();
+                                 for (Utilizadores c : imobi.getUtilizadores().values()){
+                                     if (c.getEmail().equals(compradorAux.getEmail()) && c instanceof Comprador){
+                                         compradorAux.comprarImovel(leiloes.getImovelLeilao().getMorada());
+                                         setAviso(c.getNome() + "ganhou o leilão!");
+                                         imobi.setFeed("O comprador " + compradorAux.getNome() + " ganhou o imóvel situado em "+ leiloes.getImovelLeilao().getMorada() + " num leilao! " + "\n");
+                                    }
+                                 }
                              }
-                             */
-                            
-                            }
-                         else setAviso("Tem de ser um vendedor para efetuar esta operação");
+                             else setAviso("Tem de ser um vendedor para efetuar esta operação");
+                         }
+                         else setAviso("Nenhum leilão ativo");
                          
                          break;
-                    //case 4:
+                    case 4:
+                    limparTexto();
+                    setAvisoLeilao();
+                    break;
                     case 0:
                         limparTexto();
                         acabado = 1;
@@ -499,17 +550,22 @@ public class ImOObiliaria
                 }
             }
            } 
-        } catch (SemAutorizacaoException e){System.out.println(e.getMessage());setAviso ("NÃ£o tem permissÃ£o para aceder a esta opÃ§Ã£o");}
+        } catch (SemAutorizacaoException e){System.out.println(e.getMessage());setAviso ("Não tem permissão para aceder a esta opção");}
     }
 
     // _______________________________ AVISO _____________________________________________  
     
     public static String getAviso(){return aviso;}
     public static void setAviso(String aaviso) {aviso=aaviso;}
-    public static String getAviso2(){return aviso2;}
-    public static void setAviso2(String aaviso) {aviso2=aaviso;}
+    
+    public static String getAvisoSessao(){return aviso2;}
+    public static void setAvisoSessao(String aaviso) {aviso2=aaviso;}
+    
+    public static String getAvisoLeilao(){return aviso3;}
+    public static void setAvisoLeilao() {aviso3=leiloes.calculaTempoRestante();}
+    
     public static void janelaFeed () throws Exception{setAviso("ConcluÃ­do");System.out.println(imobi.getFeed()+"\nENTER para continuar");Input.lerString();} 
-    public static void limparTexto () {System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");}
+    public static void limparTexto () {System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");}
     // _______________________________ TITULOS ___________________________________________
     
     public static void menuInicio(){
@@ -527,8 +583,8 @@ public class ImOObiliaria
         System.out.println("|    _____     5: Menu de comprador          |                    |");
         System.out.println("|   |     |    6: Leilões                    | Nº de Imóveis:     |");
         System.out.println("|   |.    |    7: Mapeamento de imóveis      |   -- "+imobi.getImovel().size()+" --          |");
-        System.out.println("|   |     |    0: Sair do programa           |                    |");
-        System.out.println("|___|_____|__________________________________|____________________|");
+        System.out.println("|   |     |    8: Consulta de imóveis        |                    |");
+        System.out.println("|___|_____|____0: Sair do programa___________|____________________|");
         System.out.println("\n***Introduza a sua opcao: ");
     }
      
@@ -537,7 +593,7 @@ public class ImOObiliaria
         System.out.println("  /       |  |                              \\");
         System.out.println(" /        |  |                               \\");
         System.out.println("/         |__|                                \\");
-        System.out.println("+------------------- OpÃ§Ãµes ------------------+");
+        System.out.println("+------------------- Opçoes ------------------+");
         System.out.println("| 1: Pesquisa por chave (morada)              |");
         System.out.println("| 2: Pesquisa por preço minimo                |");
         System.out.println("| 3: Pesquisa por preço máximo                |");
@@ -575,6 +631,7 @@ public class ImOObiliaria
         System.out.println("| 5: Listar portfólio de imóveis em venda |");
         System.out.println("| 6: Listar histórico de imóveis vendidos |");
         System.out.println("| 7: Alterar estado de imóvel             |");
+        System.out.println("| 8: Confirmar imóvel reservado           |");
         System.out.println("| 0: Sair                                 |");
         System.out.println("+-----------------------------------------+\n***Introduza a sua opcao: ");
     }
@@ -590,6 +647,7 @@ public class ImOObiliaria
         System.out.println("| 4: Adicionar como favorito    |");
         System.out.println("| 5: Listar favoritos           |");
         System.out.println("| 6: Remover dos favoritos      |");
+        System.out.println("| 7: Listar imóveis comprados   |");
         System.out.println("| 0: Sair                       |");
         System.out.println("+-------------------------------+\n***Introduza a sua opcao: ");
     }
@@ -599,7 +657,7 @@ public class ImOObiliaria
         System.out.println(" /        |  |                 \\");
         System.out.println("/         |__|                  \\");
         System.out.println("+---------- Opções -------------+");
-        System.out.println("| 1: Iniciar um leilÃ£o          |");
+        System.out.println("| 1: Iniciar um leilao          |");
         System.out.println("| 2: Adicionar comprador        |");
         System.out.println("| 3: Encerrar um leilão         |");
         System.out.println("|                               |");
@@ -838,10 +896,26 @@ public class ImOObiliaria
         }
     }
     
+    public static void consultas(){
+        int escolha;
+        List <Consulta> a = new ArrayList <Consulta> ();
+        a = imobi.getConsultas();
+        for (Consulta c : a){
+           System.out.println("O imóvel em " + c.getImovel().getMorada() + " Foi visitado " + c.getContagem() + " vezes.\n");
+        }
+        
+        System.out.println("Insira o nº de imóveis que quer ver no topo");
+        escolha = Input.lerInt();
+        System.out.println("_______ A MOSTRAR O TOP " + escolha + " de imóveis _______\n");
+        for (String s : imobi.getTopImoveis(escolha)){
+            System.out.println(s);
+        }
+    }
+    
     public static int sair() throws Exception{
         int acabado = 0;
         String c;
-        System.out.println("<i> Tem a certeza que pretende sair? (s/n)"); 
+        System.out.println(" Tem a certeza que pretende sair? (s/n)"); 
         setAviso("Concluído");
         c=Input.lerString(); 
         if(c.equals("s")||c.equals("S")){acabado = 1;imobi.gravaDados("Imobiliaria.obj");}
