@@ -124,8 +124,11 @@ public abstract class Utilizadores implements Serializable
     
     public String pesquisaPorChave(String m){
         String aux = new String();
-        if(imob.getImovel().containsKey(m)){
-            aux = imob.getImovel().get(m).toString();
+        for(Imovel i:imob.getImovel().values()){
+            if(i.getMorada().equals(m)){
+                i.incVisitas();
+                aux = i.toString();
+            }
         }
         return aux;
     }
@@ -134,6 +137,7 @@ public abstract class Utilizadores implements Serializable
         ArrayList<String> lista = new ArrayList<String>();
         for(Imovel i:imob.getImovel().values()){
             if(i.getPrecoPedido()<precoMaximo){
+                i.incVisitas();
                 lista.add(i.toString());
             }
         }
@@ -144,6 +148,7 @@ public abstract class Utilizadores implements Serializable
         ArrayList<String> lista = new ArrayList<String>();
         for(Imovel i:imob.getImovel().values()){
             if(i.getTipoImovel().equals(m)){
+                i.incVisitas();
                 lista.add(i.toString());
             }
         }
@@ -154,6 +159,7 @@ public abstract class Utilizadores implements Serializable
         ArrayList<String> lista = new ArrayList<String>();
         for(Imovel i:imob.getImovel().values()){
             if(i.getPrecoPedido()>precoMinimo){
+                i.incVisitas();
                 lista.add(i.toString());
             }
         }
@@ -164,6 +170,7 @@ public abstract class Utilizadores implements Serializable
         ArrayList<String> lista = new ArrayList<String>();
         for(Imovel i:imob.getImovel().values()){
             if(i instanceof Pesquisas){
+                i.incVisitas();
                 Pesquisas q = (Pesquisas)i;
                 if(q.getnumeroQuartos()>=x){
                 lista.add(q.toString());
@@ -178,6 +185,7 @@ public abstract class Utilizadores implements Serializable
         ArrayList<String> lista = new ArrayList<String>();
         for(Imovel i:imob.getImovel().values()){
             if(i instanceof Pesquisas){
+                i.incVisitas();
                 Pesquisas q = (Pesquisas)i;
                 if(q.getnumeroWC()>=x){
                 lista.add(q.toString());
@@ -191,6 +199,7 @@ public abstract class Utilizadores implements Serializable
         ArrayList<String> lista = new ArrayList<String>();
         for(Imovel i:imob.getImovel().values()){
             if(i instanceof Habitavel){
+                i.incVisitas();
                 Habitavel q = (Habitavel)i;
                 if(q.getHabitavel()){
                 lista.add(q.toString());
@@ -204,6 +213,7 @@ public abstract class Utilizadores implements Serializable
         ArrayList<String> lista = new ArrayList<String>();
         for(Imovel i:imob.getImovel().values()){
             if(i instanceof Habitavel){
+                i.incVisitas();
                 Habitavel q = (Habitavel)i;
                 if(q.getHabitavel() && q.getPrecoPedido()<preco){
                 lista.add(q.toString());

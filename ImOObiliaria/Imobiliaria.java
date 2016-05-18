@@ -53,14 +53,12 @@ public class Imobiliaria implements Serializable
    }
    
    public HashMap<String,Imovel> getImovel(){
-       /*
        HashMap<String,Imovel> aux = new HashMap<String,Imovel>();
        for(Imovel l:imovel.values()){
             aux.put(l.getMorada(),l);
        }
        return aux;
-       */
-      return this.imovel;
+       
    }
    
    public HashMap<String,Utilizadores> getUtilizadores(){
@@ -216,12 +214,15 @@ public class Imobiliaria implements Serializable
    
    
    public List <Consulta> getConsultas(){
-        ArrayList <Consulta> c = new ArrayList <Consulta> ();
-        Consulta consulta = new Consulta ();
+        ArrayList <Consulta> c = new ArrayList <Consulta> (10);
+        
         for (Imovel i : imovel.values()){
-            consulta.setContagem(i.getVisitas()); consulta.setImovel(i);
+            Consulta consulta = new Consulta ();
+            consulta.setImovel(i);
+            consulta.setContagem(i.getVisitas()+1);
             c.add(consulta);
         }
+         
         return c;
    }
    
@@ -260,38 +261,40 @@ public class Imobiliaria implements Serializable
            }
        }
     }
-   
+    
+   /*
    public boolean pesquisaPorChave(String m){
-        return imovel.containsKey(m);
+        
+        for (Imovel im : this.imovel.values()){ 
+            if (im.getMorada().equals(m)) {System.out.println("PASSOU");im.incVisitas();}
+        }
+        return this.imovel.containsKey(m);
    }
-   
+   */
+
    public Set<String> getTopImoveis (int i){
-       HashSet <String> imoveis = new HashSet <String>();
+       HashSet <String> topImoveis = new HashSet <String>();
        try{
            if (imovel.isEmpty()) {throw new ImovelInexistenteException ("Não existem imóveis nos anúncios");}
            else {
-           for (;i>0;i--){
-               if (this.imovel.containsKey(i)) imoveis.add(this.imovel.get(i).toString());
+           for (Imovel im : this.imovel.values()){
+                if (i>0) topImoveis.add(im.getMorada());
+                i--;
            }
         }
        }catch (ImovelInexistenteException e) {System.out.println(e.getMessage());}
-       return imoveis;
+       return topImoveis;
     }
    
    public Map<Imovel,Vendedor> getMapeamentoImoveis(){
-       
-        String key;
         Map <Imovel,Vendedor> aux = new HashMap <Imovel,Vendedor> ();
-        for (Map.Entry <String, Utilizadores> u :utilizadores.entrySet()){
-            key= u.getKey();
-            if (u.getValue() instanceof Vendedor){
-                vendedorAux = (Vendedor) u.getValue();
-                System.out.println("-- Vendedor " +vendedorAux.getNome() + " com o user name "+vendedorAux.getEmail()+ " tem em venda os Imóveis: \n");
-                for (Imovel i : vendedorAux.getImoveisP()){
-                   aux.put(i, vendedorAux);
+        for (Utilizadores u : utilizadores.values()){
+            if (u instanceof Vendedor){
+                vendedorAux = (Vendedor) u;
+               for (Imovel i : vendedorAux.getImoveisP()){
+                   aux.put(i.clone(), vendedorAux.clone());
                    i.incVisitas();
-               }
-                System.out.println(aux.toString() + "\n\n");
+                }
             }
         }
         return aux;

@@ -49,11 +49,14 @@ public class ImOObiliaria
                 break; 
                 case 7:
                     limparTexto();
-                    imobi.getMapeamentoImoveis();
+                    mapeamentoImoveis();
+                    System.out.println("\nENTER para continuar");Input.lerString();
                 break;
                 
                 case 8: 
+                    limparTexto();
                     consultas();
+                    System.out.println("\nENTER para continuar");Input.lerString();
                     break;
                 case 0:
                     limparTexto();
@@ -618,7 +621,7 @@ public class ImOObiliaria
     public static String getAvisoLeilao(){return aviso3;}
     public static void setAvisoLeilao() {aviso3=leiloes.calculaTempoRestante();}
     
-    public static void janelaFeed () throws Exception{setAviso("ConcluÃ­do");System.out.println(imobi.getFeed()+"\nENTER para continuar");Input.lerString();} 
+    public static void janelaFeed () throws Exception{setAviso("Concluido");System.out.println(imobi.getFeed()+"\nENTER para continuar");Input.lerString();} 
     public static void limparTexto () {System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");}
     // _______________________________ TITULOS ___________________________________________
     
@@ -930,6 +933,22 @@ public class ImOObiliaria
         catch (TipoInvalidoException e) {setAviso ("Tipo de imóvel inválido");}
         catch (EstadoInvalidoException e) {setAviso ("Estado do imóvel inválido");}
         
+    }          
+    
+    public static void mapeamentoImoveis (){
+         Imovel i;
+        System.out.println("   _______|_ |________________");
+        System.out.println("  /       |  |                \\");
+        System.out.println(" /        |  |                 \\");
+        System.out.println("/         |__|                  \\");
+        System.out.println("+-------------------------------+");
+        
+         for (Map.Entry <Imovel, Vendedor> mapeamento : imobi.getMapeamentoImoveis().entrySet()){
+             i = mapeamento.getKey();
+             System.out.println("| " + i.getTipoImovel() +" com a morada " + i.getMorada() + " pertencente a " + mapeamento.getValue().getNome());
+         }
+         
+        System.out.println("+-------------------------------+\n");
     }
     
     public static void listarImoveisP (){
@@ -949,15 +968,16 @@ public class ImOObiliaria
         int escolha;
         List <Consulta> a = new ArrayList <Consulta> ();
         a = imobi.getConsultas();
+        System.out.println(" | A mostrar 10 últimos imóveis consultados\n");
         for (Consulta c : a){
-           System.out.println("O imóvel em " + c.getImovel().getMorada() + " Foi visitado " + c.getContagem() + " vezes.\n");
+           System.out.println(" | O imóvel em " + c.getImovel().getMorada() + " Foi visitado " + c.getImovel().getVisitas() + " vez(es).\n");
         }
         
-        System.out.println("Insira o nº de imóveis que quer ver no topo");
+        System.out.println(" | Insira o nº de imóveis que quer ver no topo");
         escolha = Input.lerInt();
-        System.out.println("_______ A MOSTRAR O TOP " + escolha + " de imóveis _______\n");
+        System.out.println(" | _______ A MOSTRAR O TOP " + escolha + " de imóveis _______\n");
         for (String s : imobi.getTopImoveis(escolha)){
-            System.out.println(s);
+            System.out.println(" | " +  s.toString());
         }
     }
     

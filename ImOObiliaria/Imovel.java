@@ -79,7 +79,7 @@ public abstract class Imovel implements Serializable
         this.visitas = vvisitas;
     }
     public void incVisitas(){
-        this.visitas++;
+        this.visitas+=1;
     }
     
     public boolean equals(Object o){
