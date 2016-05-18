@@ -528,26 +528,10 @@ public class ImOObiliaria
                          
                          break;
                     case 2:
-                    
-                         limparTexto();
-                         try {
-                             if (leiloes.getEmExecucao()){ 
-                                 if (imobi.getAtual() instanceof Comprador){
-                                 System.out.println("Está inscrito no leilão.\nLimite de dinheiro (em €)?\n");
-                                 limite= Input.lerDouble();
-                                 System.out.println("Incrementos ao longo do tempo (em €)?\n");
-                                 incrementos= Input.lerDouble();
-                                 System.out.println("De quantos em quantos minutos?\n");
-                                 minutos= Input.lerDouble();
-                                 leiloes.adicionaComprador (imobi.getAtual().getEmail(),limite ,incrementos ,minutos);
-                                 setAviso("Boa sorte.");
-                                }
-                                else {throw new SemAutorizacaoException ("");}
-                             }else {throw new LeilaoTerminadoException ("");}
-                         }
-                         catch (LeilaoTerminadoException e) {setAviso("Nenhum leilão ativo");}
-                         catch (SemAutorizacaoException e) {setAviso("Tem de ser um comprador para efetuar esta operação");}
-                         break;
+                        limparTexto();
+                        System.out.println(leiloes.listarLicitadores());
+                        setAviso("");
+                        break;
                     case 3:
                     
                         limparTexto();
@@ -564,35 +548,48 @@ public class ImOObiliaria
                                          c = compradorAux;
                                      }
                                  }
-                             }else {throw new SemAutorizacaoException ("");}
-                           }else {throw new LeilaoTerminadoException ("");}
-                        }catch (LeilaoTerminadoException e) {setAviso("Nenhum leilão ativo");}
-                        catch (SemAutorizacaoException e) {setAviso("Tem de ser um comprador para efetuar esta operação");}
+                             }else {throw new SemAutorizacaoException ("Tem de ser um vendedor para efetuar esta operação. ");}
+                           }else {throw new LeilaoTerminadoException ("Nenhum leilão ativo. ");}
+                        }catch (LeilaoTerminadoException e) {setAviso("Ocorreu um erro. "+ e.getMessage());}
+                        catch (SemAutorizacaoException e) {setAviso("Ocorreu um erro. "+ e.getMessage());}
                          
                          
                          break;
                     case 4:
-                    limparTexto();
-                    System.out.println(leiloes.listarLicitadores());
-                    setAviso("");
-                    break;
-                    
+                         limparTexto();
+                         try {
+                             if (leiloes.getEmExecucao()){ 
+                                 if (imobi.getAtual() instanceof Comprador){
+                                 System.out.println("Está inscrito no leilão.\nQual é o seu limite máximo dos lances (em €)?\n");
+                                 limite= Input.lerDouble();
+                                 System.out.println("Lances (em €)?\n");
+                                 incrementos= Input.lerDouble();
+                                 System.out.println("De quantos em quantos minutos?\n");
+                                 minutos= Input.lerDouble();
+                                 leiloes.adicionaComprador(imobi.getAtual().getEmail(), limite, incrementos, minutos);
+                                 setAviso("A sua licitação foi efetuada com sucesso. Boa sorte.");
+                                }
+                                else {throw new SemAutorizacaoException ("Tem de ser um comprador para efetuar esta operação");}
+                             }else {throw new LeilaoTerminadoException ("Nenhum leilão ativo");}
+                         }
+                         catch (LeilaoTerminadoException e) {setAviso("Ocorreu um erro. " + e.getMessage());}
+                         catch (SemAutorizacaoException e) {setAviso("Ocorreu um erro. " + e.getMessage());}
+                         break;
                     case 5:
                          limparTexto();
                          try {
                              if (leiloes.getEmExecucao()){ 
                                  if (imobi.getAtual() instanceof Comprador){
-                                 System.out.println("Quanto quer apostar (em €)?\n");
+                                 System.out.println("Está inscrito no leilão.\nQual é o seu lanço (em €)?\n");
                                  incrementos= Input.lerDouble();
                                  leiloes.aposta(imobi.getAtual().getEmail(),incrementos);
-                                 setAviso("A sua licitação foi efetuada com sucesso.");
+                                 setAviso("A sua licitação foi efetuada com sucesso. Boa sorte.");
                                 }
-                                else {throw new SemAutorizacaoException ("");}
-                             }else {throw new LeilaoTerminadoException ("");}
+                                else {throw new SemAutorizacaoException ("Tem de ser um comprador para efetuar esta operação. ");}
+                             }else  {throw new LeilaoTerminadoException ("Nenhum leilão ativo. ");}
                          }
-                         catch (LeilaoTerminadoException e) {setAviso("Nenhum leilão ativo");}
-                         catch (SemAutorizacaoException e) {setAviso("Tem de ser um comprador para efetuar esta operação");}
-                         
+                         catch (LeilaoTerminadoException e) {setAviso("Ocorreu um erro. "+ e.getMessage());}
+                         catch (SemAutorizacaoException e)  {setAviso("Ocorreu um erro. "+ e.getMessage());}
                     break;
                     case 0:
                         limparTexto();
@@ -713,10 +710,10 @@ public class ImOObiliaria
         System.out.println("/         |__|                  \\");
         System.out.println("+---------- Opções -------------+");
         System.out.println("| 1: Iniciar um leilao          |");
-        System.out.println("| 2: Adicionar comprador        |");
+        System.out.println("| 2: Listar licitadores         |");
         System.out.println("| 3: Encerrar um leilão         |");
-        System.out.println("| 4: Listar licitadores         |");
-        System.out.println("| 5: Licitação                  |");
+        System.out.println("| 4: Licitar                    |");
+        System.out.println("| 5: Licitar (Imeditato)        |");
         System.out.println("| 0: Sair dos leilões           |");
         System.out.println("+-------------------------------+\n***Introduza a sua opcao: ");
     }
