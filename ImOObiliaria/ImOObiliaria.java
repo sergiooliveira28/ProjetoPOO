@@ -12,7 +12,7 @@ public class ImOObiliaria
     
     public static void main(String[] args)throws Exception{
         imobi.init();
-        int escolha,acabado=0;imobi.carregaDados("Imobiliaria.obj"); setAviso("Bem-vindo");setAvisoSessao("Não tem sessão inicidada.");   
+        int escolha,acabado=0;imobi.carregaDados("Imobiliaria.obj"); setAviso("Bem-vindo. ");setAvisoSessao("Não tem sessão inicidada. ");   
         while (acabado != 1){
 
             System.out.println("\n\n\n\n\n = = =  I m O O b i l i á r i a  = = =\n");
@@ -50,13 +50,13 @@ public class ImOObiliaria
                 case 7:
                     limparTexto();
                     mapeamentoImoveis();
-                    System.out.println("\nENTER para continuar");Input.lerString();
+                    System.out.println("\nENTER para continuar ");Input.lerString();
                 break;
                 
                 case 8: 
                     limparTexto();
                     consultas();
-                    System.out.println("\nENTER para continuar");Input.lerString();
+                    System.out.println("\nENTER para continuar ");Input.lerString();
                     break;
                 case 0:
                     limparTexto();
@@ -76,7 +76,7 @@ public class ImOObiliaria
 
     public static void utilizadores () throws UtilizadorInexistenteException, SemAutorizacaoException{
         int escolha,acabado=0;      
-        String email,nome,password,morada,dataNascimento; boolean registado,erro;
+        String email,nome,password,morada,dataNascimento; boolean registado;
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n = = =  U t i l i z a d o r e s  = = =\n\n");
         
         while (acabado != 1){
@@ -106,8 +106,8 @@ public class ImOObiliaria
                         dataNascimento = Input.lerString();
                         registado = true;
                         vendedorAux = new Vendedor (email,nome,password,morada,dataNascimento,imobi,registado);
-                        erro=imobi.registarUtilizador(vendedorAux);
-                        setAviso("Vendedor criado");
+                        imobi.registarUtilizador(vendedorAux);
+                        setAviso("Vendedor "+ nome +" criado");
                         imobi.setFeed(nome + " criou um perfil de vendedor \n");
                         
                     }
@@ -124,14 +124,13 @@ public class ImOObiliaria
                         dataNascimento = Input.lerString();
                         registado = true;
                         compradorAux = new Comprador (email,nome,password,morada,dataNascimento,imobi,registado);
-                        erro=imobi.registarUtilizador(compradorAux);
-                        setAviso("Comprador criado");
+                        imobi.registarUtilizador(compradorAux);
+                        setAviso("Comprador "+ nome +" criado");
                         imobi.setFeed(nome + " criou um perfil de comprador \n");
                     }
-                    else {throw new UtilizadorExistenteException("Ocorreu um erro.");}
+                    else {throw new UtilizadorExistenteException("Tipo de utilizador incorreto. ");}
                     
-                    if (erro) {setAviso("Este utilizador já existe!");}
-                } catch (UtilizadorExistenteException e){setAviso(e.getMessage() + "Tipo de utilizador inválido");}
+                } catch (UtilizadorExistenteException e){setAviso("Ocorreu um erro. " + e.getMessage());}
                     
                     
                 break;
@@ -142,11 +141,10 @@ public class ImOObiliaria
                     System.out.println("Insira a password");
                     password = Input.lerString();
                     try{
-                        erro = imobi.iniciaSessao(email,password);
-                        if (erro) {throw new SemAutorizacaoException("Ocorreu um erro ao iniciar sessão.");}
-                        setAviso("Sessão iniciada"); setAvisoSessao("Utilizador atual: " + email);
+                        imobi.iniciaSessao(email,password);
+                        setAviso("Sessão iniciada como " + email); setAvisoSessao("Utilizador atual: " + email);
                     
-                    } catch (SemAutorizacaoException e){setAviso("");}
+                    } catch (SemAutorizacaoException e){setAviso("Ocorreu um erro. " + e.getMessage());}
                 break;
                 case 3:
                     limparTexto();
@@ -178,7 +176,7 @@ public class ImOObiliaria
 
     
     public static void vendedor () throws ImovelInexistenteException,EstadoInvalidoException,TipoInvalidoException,ImovelExisteException{
-        int escolha,acabado=0; boolean erro; String morada, estado;
+        int escolha,acabado=0; String morada, estado;
         // SESSAO VENDEDOR
         try {
            if (imobi.getAtual() instanceof Vendedor && imobi.getAtual().getRegistado()){
@@ -209,16 +207,16 @@ public class ImOObiliaria
                                 System.out.println("\n- Morada do imóvel que quer remover \n");
                                 morada = Input.lerString();
                                 try{
-                                if (imobi.getImovel().isEmpty()) {throw new ImovelInexistenteException("Não existem imóveis na base de dados");}
-                                else if (imobi.getImovel().containsKey(morada)){
+                                    if (imobi.getImovel().isEmpty()) {throw new ImovelInexistenteException("Não existem imóveis na base de dados");}
+                                    else if (imobi.getImovel().containsKey(morada)){
+                                      
+                                        imobi.setFeed(imobi.getAtual().getNome() + " removeu dos anúncios o imóvel " + imobi.getImovel().get(morada).getEstado() + " situado na seguinte morada: " + morada + "\n");
+                                        imobi.removeImovel(morada);
                                     
-                                    imobi.setFeed(imobi.getAtual().getNome() + " removeu dos anúncios o imóvel " + imobi.getImovel().get(morada).getEstado() + " situado na seguinte morada: " + morada + "\n");
-                                    imobi.removeImovel(morada);
-                                    
-                                    setAviso("Imóvel removido");
-                                    imobi.setFeed("Foi removido um imóvel da base de dados \n");
-                                }else {throw new ImovelInexistenteException("Imóvel não existente");}
-                            }catch (ImovelInexistenteException e){System.out.println(e.getMessage()); setAviso("Ocorreu um erro");}
+                                        setAviso("Imóvel " + morada + " removido.");
+                                        imobi.setFeed("Foi removido um imóvel da base de dados \n");
+                                    }else {throw new ImovelInexistenteException("Imóvel não existente");}
+                                }catch (ImovelInexistenteException e){setAviso("Ocorreu um erro. " + e.getMessage());}
                             break;  
                             case 4: 
                                 limparTexto();
@@ -227,8 +225,8 @@ public class ImOObiliaria
                                         imobi.listarImovel();
                                         System.out.println("\nENTER para continuar");Input.lerString();
                                         setAviso("Imóveis listados");
-                                    }else {throw new ImovelInexistenteException("");}
-                                }catch (ImovelInexistenteException e){setAviso("Não existem imóveis nos anúncios");}
+                                    }else {throw new ImovelInexistenteException("Não existem imóveis nos anúncios. ");}
+                                }catch (ImovelInexistenteException e){setAviso("Ocorreu um erro. " + e.getMessage());}
                                 
                                
                         break;
@@ -242,7 +240,6 @@ public class ImOObiliaria
                         break;
                         case 7:
                         limparTexto();
-                        erro=true;
                         imobi.listarImovel();
                         System.out.println("\n- Morada do imóvel que quer alterar \n");
                         morada = Input.lerString();
@@ -251,28 +248,24 @@ public class ImOObiliaria
                         try{
                             if (!imobi.getImovel().isEmpty()){
                                 imobi.alteraEstadoImovel(morada,estado);
-                                setAviso ("estado de imóvel alterado");
+                                setAviso("Imóvel " + morada + " alterado.");
                                 imobi.setFeed(imobi.getAtual().getNome() + " alterou o estado do imóvel para " + imobi.getImovel().get(morada).getEstado() + " situado na seguinte morada: " + morada + "\n");
                             }
-                            else {throw new ImovelInexistenteException("");}
-                        }catch (ImovelInexistenteException e){setAviso("estado de imóvel nao alterado");}
+                            else {throw new ImovelInexistenteException("Não existem imóveis. ");}
+                        }catch (ImovelInexistenteException e){setAviso("Ocorreu um erro. " + e.getMessage());}
                        
                         
          
                         break;
                         case 8:
                         try{
-                            if (!imobi.getImovel().isEmpty()){
                                 System.out.println("- Morada do imóvel para alteração do estado \"Reservado\" para \"Vendido\" \n");
                                 morada = Input.lerString();
-                                erro = imobi.confirmarImovelComprado(morada);
-                                if (erro) {throw new ImovelInexistenteException("");}
-                                setAviso("Concluído");
+                                imobi.confirmarImovelComprado(morada);
+                                setAviso("Imóvel " + morada + " alterado.");
                                 imobi.setFeed(imobi.getAtual().getNome() + " acabou de confirmar a venda do imóvel na seguinte morada: " + morada + " \n");
-                                
-                            }else {throw new ImovelInexistenteException("");}
-                        }catch (ImovelInexistenteException e){setAviso("estado de imóvel nao alterado");}
-                                break;
+                        }catch (ImovelInexistenteException e){setAviso("Ocorreu um erro. " + e.getMessage());}
+                        break;
                                 
                        case 0:
                              limparTexto();
@@ -317,31 +310,33 @@ public class ImOObiliaria
                             limparTexto();
                                  try{
                                     if (!imobi.getImovel().isEmpty()){
-                                        imobi.listarImovel();
+                                        imobi.listarImovelComprador();
                                         System.out.println("\nENTER para continuar");Input.lerString();
                                         setAviso("Imóveis listados");
-                                    }else {throw new ImovelInexistenteException("");}
-                                }catch (ImovelInexistenteException e){setAviso("Não existem imóveis nos anúncios");}
+                                    }else {throw new ImovelInexistenteException("Não existem imóveis nos anúncios");}
+                                }catch (ImovelInexistenteException e){setAviso("Ocorreu um erro. " + e.getMessage());}
                        break;
                        
                        case 3:
                             limparTexto();
-                            imobi.listarImovel();
+                            imobi.listarImovelComprador();
                             System.out.println("\nInsira a morada do imóvel que quer comprar\n");
                             morada = Input.lerString();
                             try{
-                                erro = imobi.comprarImovel(morada);
-                                if (erro) {throw new ImovelInexistenteException("");}
-                                setAviso("Imóvel reservado. O vendedor terá de confirmar a compra");
+                                imobi.comprarImovel(morada);
+                               setAviso("Imóvel " + morada + " reservado. (ATENÇÃO) O vendedor terá de confirmar primeiro para concluír a compra");
                                 imobi.setFeed(imobi.getAtual().getNome() + " reservou o imóvel na seguinte morada: " + morada + " \n");
-                            }catch (ImovelInexistenteException e){setAviso("Ocorreu um erro");}
+                            }catch (ImovelInexistenteException e){setAviso("Ocorreu um erro. " + e.getMessage());}
                        break;
                        case 4:
                            limparTexto();
-                           imobi.listarImovel();
-                           System.out.println("\nInsira a morada do imóvel que quer adicionar aos favoritos");morada = Input.lerString();
-                           imobi.adicFavorito(morada);
-                           setAviso("");
+                           imobi.listarImovelComprador();
+                           
+                           try {
+                               System.out.println("\nInsira a morada do imóvel que quer adicionar aos favoritos");morada = Input.lerString();
+                               imobi.adicFavorito(morada);
+                               setAviso("Imóvel " + morada + " adicionado.");
+                            }catch (ImovelExisteException e){setAviso("Ocorreu um erro. " + e.getMessage());}
                            limparTexto();
                        break;
                        case 5:
@@ -351,7 +346,10 @@ public class ImOObiliaria
                        break;
                        case 6:
                            limparTexto();System.out.println("Insira a morada do imóvel que quer remover dos favoritos");morada = Input.lerString();
-                           imobi.removeFavorito(morada);
+                           try{
+                               imobi.removeFavorito(morada);
+                               setAviso("Imóvel " + morada + " removido.");
+                           }catch (ImovelInexistenteException e){setAviso(e.getMessage());}
                            limparTexto();
                        break;
                        case 7:
@@ -523,7 +521,7 @@ public class ImOObiliaria
                                           setAvisoLeilao();
                                           imobi.setFeed(imobi.getAtual().getNome() + " iniciou um leilão com uma duração de "+ escolha + " horas \n");
                                     }
-                                  }catch (ImovelInexistenteException e) {setAviso(e.getMessage());}
+                                  }catch (ImovelInexistenteException e) {setAviso("Ocorreu um erro. " + e.getMessage());}
                             }
                            else setAviso("Tem de ser um vendedor para efetuar esta operação");
                          }else setAviso("Já tem um leilão em execução!");
@@ -553,7 +551,7 @@ public class ImOObiliaria
                     case 3:
                     
                         limparTexto();
-                         try {
+                        try {
                            if (leiloes.getEmExecucao()){ 
                              if (imobi.getAtual() instanceof Vendedor){
                                  vencedor = leiloes.encerraLeilao();
@@ -733,7 +731,6 @@ public class ImOObiliaria
     }
 
     public static void insereImovel () throws EstadoInvalidoException,TipoInvalidoException,ImovelExisteException{
-        boolean erro;
         String estado;
         String estado2;
         String morada;
@@ -765,7 +762,7 @@ public class ImOObiliaria
                 if(escolha.equals("Moradia")){
                     System.out.println("- Estado da moradia (Em venda / Reservado / Vendido): ");
                     estado = Input.lerString();
-                    if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("");}
+                    if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("Estado de imóvel inválido");}
                     System.out.println("- Morada: ");
                     morada = Input.lerString();
                     System.out.println("- Preço Pedido(Euros): ");
@@ -774,7 +771,7 @@ public class ImOObiliaria
                     precoMinimo= Input.lerDouble();
                     System.out.println("- Tipo(Isolada,Germinada,Banda,Gaveto): ");
                     tipo = Input.lerString();
-                    if (!tipo.equals("Isolada")&&!tipo.equals("Germinada")&&!tipo.equals("Banda")&&!tipo.equals("Gaveto")) {throw new TipoInvalidoException("");}
+                    if (!tipo.equals("Isolada")&&!tipo.equals("Germinada")&&!tipo.equals("Banda")&&!tipo.equals("Gaveto")) {throw new TipoInvalidoException("Tipo de imóvel inválido");}
                     
                     System.out.println("- Area Implantacao(metros quadrados): ");
                     areaImplantacao = Input.lerDouble();
@@ -789,7 +786,7 @@ public class ImOObiliaria
                     System.out.println("- Numero de Porta: ");
                     numeroPorta = Input.lerInt();
                     Moradia a = new Moradia (estado,morada,precoPedido,precoMinimo,tipo,areaImplantacao,areaTotal,areaTerreno,numeroQuartos,numeroWC,numeroPorta);
-                    erro= imobi.addImovel(a);
+                    imobi.addImovel(a);
                     
                     imobi.setFeed(imobi.getAtual().getNome() + " inseriu nos anúncios o imóvel " + escolha + " situado na seguinte morada: " + a.getMorada() + "\n");
                     
@@ -798,7 +795,7 @@ public class ImOObiliaria
                     if(escolha.equals("Apartamento")){
                        System.out.println("- Estado do apartamento (Em venda / Reservado / Vendido): ");
                        estado = Input.lerString();
-                       if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("");};
+                       if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("Estado de imóvel inválido");};
                        System.out.println("- Morada: ");
                        morada = Input.lerString();
                        System.out.println("- Preço Pedido(Euros): ");
@@ -807,7 +804,7 @@ public class ImOObiliaria
                        precoMinimo= Input.lerDouble();
                        System.out.println("- Tipo(Simples, Duplex, Triplex): ");
                        tipo = Input.lerString();
-                       if (!tipo.equals("Simples")&&!tipo.equals("Duplex")&&!tipo.equals("Triplex")) {throw new TipoInvalidoException("");}
+                       if (!tipo.equals("Simples")&&!tipo.equals("Duplex")&&!tipo.equals("Triplex")) {throw new TipoInvalidoException("Tipo de imóvel inválido");}
                     
                        System.out.println("- Area Total(metros quadrados): ");
                        areaTotal =Input.lerDouble();
@@ -822,7 +819,7 @@ public class ImOObiliaria
                        System.out.println("- Com Garagem: ");
                        garagem = Input.lerBoolean();
                        Apartamento b = new Apartamento (estado,morada,precoPedido,precoMinimo,tipo,areaTotal,numeroQuartos,numeroWC,numeroPorta,numeroAndar,garagem);
-                       erro= imobi.addImovel(b);
+                       imobi.addImovel(b);
                        imobi.setFeed(imobi.getAtual().getNome() + " inseriu nos anúncios o imóvel " +escolha+ " situado na seguinte morada: " + b.getMorada() + "\n");
                        
                    }
@@ -830,7 +827,7 @@ public class ImOObiliaria
                     if(escolha.equals("Terreno")){
                        System.out.println("- Estado do terreno (Em venda / Reservado / Vendido): ");
                        estado = Input.lerString();
-                       if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("");}
+                       if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("Estado de imóvel inválido");}
                        System.out.println("- Morada: ");
                        morada = Input.lerString();
                        System.out.println("- Preço Pedido(Euros): ");
@@ -846,7 +843,7 @@ public class ImOObiliaria
                        System.out.println("- Tem Rede de Esgotos: ");
                        esgotos = Input.lerBoolean();
                        Terreno c = new Terreno (estado,morada,precoPedido,precoMinimo,apropriado,diametroCanal,redeElectrica,esgotos);
-                       erro= imobi.addImovel(c);
+                       imobi.addImovel(c);
                        imobi.setFeed(imobi.getAtual().getNome() + " inseriu nos anúncios o imóvel " + escolha + " situado na seguinte morada: " + c.getMorada() + "\n");
                        
                    }
@@ -854,7 +851,7 @@ public class ImOObiliaria
                     if(escolha.equals("Loja")){
                        System.out.println("- Estado da loja (Em venda / Reservado / Vendido): ");
                        estado = Input.lerString();
-                       if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("");}
+                       if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("Estado de imóvel inválido");}
                        System.out.println("- Morada: ");
                        morada = Input.lerString();
                        System.out.println("- Preço Pedido(Euros): ");
@@ -870,7 +867,7 @@ public class ImOObiliaria
                        System.out.println("- Numero da Porta: ");
                        numeroPorta = Input.lerInt();
                        Loja d = new Loja (estado,morada,precoPedido,precoMinimo,negocio,area,wc,numeroPorta);
-                       erro= imobi.addImovel(d);
+                       imobi.addImovel(d);
                        imobi.setFeed(imobi.getAtual().getNome() + " inseriu nos anúncios o imóvel " + escolha + " situado na seguinte morada: " + d.getMorada() + "\n");
                        
                    }
@@ -879,7 +876,7 @@ public class ImOObiliaria
                        System.out.println("** Informação sobre a Loja **");
                        System.out.println("- Estado da loja (Em venda / Reservado / Vendido): ");
                        estado = Input.lerString();
-                       if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("");}
+                       if (!estado.equals("Em venda")&&!estado.equals("Reservado")&&!estado.equals("Vendido")) {throw new EstadoInvalidoException("Estado de imóvel inválido");}
                        System.out.println("- Morada: ");
                        morada = Input.lerString();
                        System.out.println("- Preço Pedido(Euros): ");
@@ -897,7 +894,7 @@ public class ImOObiliaria
                        System.out.println("** Informação sobre o Apartamento **");
                        System.out.println("- Estado do apartamento (Em venda / Reservado / Vendido): ");
                        estado2 = Input.lerString();
-                       if (!estado2.equals("Em venda")&&!estado2.equals("Reservado")&&!estado2.equals("Vendido")) {throw new EstadoInvalidoException("");}
+                       if (!estado2.equals("Em venda")&&!estado2.equals("Reservado")&&!estado2.equals("Vendido")) {throw new EstadoInvalidoException("Tipo de imóvel inválido");}
                        System.out.println("- Morada: ");
                        morada2 = Input.lerString();
                        System.out.println("- Preço Pedido(Euros): ");
@@ -906,7 +903,7 @@ public class ImOObiliaria
                        precoMinimo2= Input.lerDouble();
                        System.out.println("- Tipo(Simples, Duplex, Triplex): ");
                        tipo = Input.lerString();
-                       if (!tipo.equals("Simples")&&!tipo.equals("Duplex")&&!tipo.equals("Triplex")) {throw new TipoInvalidoException("");}
+                       if (!tipo.equals("Simples")&&!tipo.equals("Duplex")&&!tipo.equals("Triplex")) {throw new TipoInvalidoException("Tipo de imóvel inválido");}
                        System.out.println("- Area Total(metros quadrados): ");
                        areaTotal =Input.lerDouble();
                        System.out.println("- Numero Quartos: ");
@@ -921,35 +918,33 @@ public class ImOObiliaria
                        garagem = Input.lerBoolean();
                        Apartamento f = new Apartamento (estado,morada,precoPedido,precoMinimo,tipo,areaTotal,numeroQuartos,numeroWC,numeroPorta,numeroAndar,garagem);
                        LojaHabitavel d = new LojaHabitavel (estado,morada,precoPedido,precoMinimo,negocio,area,wc,numeroPorta,f);
-                       erro= imobi.addImovel(d);
+                       imobi.addImovel(d);
                        imobi.setFeed(imobi.getAtual().getNome() + " inseriu nos anúncios o imóvel " + escolha + " situado na seguinte morada: " + d.getMorada() + "\n");
                        
                 }else {throw new TipoInvalidoException("");}
-            if (erro) setAviso("Imóvel já existe!");
-            else setAviso("Imóvel adicionado");
-                
-
+            setAviso("Imóvel adicionado");
         }
-        catch (TipoInvalidoException e) {setAviso ("Tipo de imóvel inválido");}
-        catch (EstadoInvalidoException e) {setAviso ("Estado do imóvel inválido");}
+        catch (ImovelExisteException e){setAviso("Ocorreu um erro. " + e.getMessage());}
+        catch (TipoInvalidoException e) {setAviso("Ocorreu um erro. " + e.getMessage());}
+        catch (EstadoInvalidoException e) {setAviso("Ocorreu um erro. " + e.getMessage());}
         
     }          
     
     public static void mapeamentoImoveis (){
          Imovel i;
-        System.out.println("   _______|_ |________________");
-        System.out.println("  /       |  |                \\");
-        System.out.println(" /        |  |                 \\");
-        System.out.println("/         |__|                  \\");
-        System.out.println("+-------------------------------+");
+        System.out.println("   _______|_ |__________________________________");
+        System.out.println("  /       |  |                                 \\");
+        System.out.println(" /        |  |                                  \\");
+        System.out.println("/         |__|                                   \\");
+        System.out.println("+-------------------------------------------------+");
         
          for (Map.Entry <Imovel, Vendedor> mapeamento : imobi.getMapeamentoImoveis().entrySet()){
              i = mapeamento.getKey();
              System.out.println("| " + i.getTipoImovel() +" com a morada " + i.getMorada() + " pertencente a " + mapeamento.getValue().getNome());
          }
          
-        System.out.println("+-------------------------------+\n");
-    }
+       System.out.println("+-------------------------------------------------+");
+     }
     
     public static void listarImoveisP (){
         System.out.println(" ** Portfolio de imóveis em venda ** \n\n");
@@ -972,7 +967,7 @@ public class ImOObiliaria
         for (Consulta c : a){
            System.out.println(" | O imóvel em " + c.getImovel().getMorada() + " Foi visitado " + c.getImovel().getVisitas() + " vez(es).\n");
         }
-        
+        System.out.println(" |  \n");
         System.out.println(" | Insira o nº de imóveis que quer ver no topo");
         escolha = Input.lerInt();
         System.out.println(" | _______ A MOSTRAR O TOP " + escolha + " de imóveis _______\n");

@@ -127,24 +127,21 @@ public class Imobiliaria implements Serializable
    
    // IMOVEIS
    
-    public boolean iniciaSessao(String email, String password) throws SemAutorizacaoException {
+    public void iniciaSessao(String email, String password) throws SemAutorizacaoException {
         boolean erro = true;
-        try {
-        if (this.atual.getRegistado()){throw new SemAutorizacaoException("Ja tem sessao iniciada\n Termine a sessao atual.");}
+        if (this.atual.getRegistado()){throw new SemAutorizacaoException("Ja tem sessao iniciada\n Termine a sessao atual. ");}
         else{
                 for (Utilizadores u : this.utilizadores.values()){
                     if (email.equals(u.getEmail())&&password.equals(u.getPassword())&& u instanceof Vendedor) {
-                        atual = (Vendedor) u; erro=false;
+                        atual = (Vendedor) u; erro = false;
                     }
                     else if (email.equals(u.getEmail())&&password.equals(u.getPassword())&& u instanceof Comprador) {
-                        atual =  (Comprador) u; erro=false;
+                        atual =  (Comprador) u; erro = false;
                     } 
                 }
-                if (erro) {throw new SemAutorizacaoException("Utilizador nao encontrado ou palavra passe incorreta\n");}
+                if (erro) {throw new SemAutorizacaoException("Utilizador nao encontrado ou palavra passe incorreta. ");}
             }
-        } 
-        catch (SemAutorizacaoException e){System.out.println(e.getMessage());} 
-        return erro;
+        
     }
     
     public void fechaSessao(){
@@ -159,18 +156,14 @@ public class Imobiliaria implements Serializable
         return this.imovel;
    }
    
-   public boolean addImovel (Imovel i)throws ImovelExisteException{
+   public void addImovel (Imovel i)throws ImovelExisteException{
         vendedorAux = (Vendedor) atual;
-        boolean erro = this.imovel.containsKey(i.getMorada());
-        try {
-            if (erro){ throw new ImovelExisteException("Imóvel já existe\n");}
-            else {
-                   imovel.put(i.getMorada(),i);
-                   vendedorAux.setImovelP(i);
-            }
-        }catch (ImovelExisteException e){System.out.println(e.getMessage());}
+        if (this.imovel.containsKey(i.getMorada())){throw new ImovelExisteException("Imóvel já existe. ");}
+        else {
+               imovel.put(i.getMorada(),i);
+               vendedorAux.setImovelP(i);
+        }
         atual = vendedorAux;
-        return erro;
    }
    
    public void registaImovel (Imovel i) throws ImovelExisteException{
@@ -196,6 +189,20 @@ public class Imobiliaria implements Serializable
         
    }
    
+   public void listarImovelComprador () throws ImovelInexistenteException {
+        boolean erro = this.imovel.isEmpty();
+        try{
+            if (!erro){
+                for (Imovel i : this.imovel.values()){
+                    System.out.println(i.toStringParaCompradores());
+                    i.incVisitas();
+                }
+            
+            }
+            else {throw new ImovelInexistenteException("");}
+        }catch(ImovelInexistenteException e){System.out.println(e.getMessage());}
+        
+   }
    /*
    public void removeImovel (String morada){
             for (Imovel i : this.imovel.values()){
@@ -234,16 +241,14 @@ public class Imobiliaria implements Serializable
        this.utilizadores.put(u.getEmail(),u);
    }
     
-   public boolean registarUtilizador (Utilizadores u) throws UtilizadorExistenteException{
-       boolean erro=true;
-        try {
-           if (this.utilizadores.containsKey(u.getEmail())) {throw new UtilizadorExistenteException("");}
-           else {
-               this.utilizadores.put(u.getEmail(),u);erro=false;
-            } 
+   public void registarUtilizador (Utilizadores u) throws UtilizadorExistenteException{
        
-       } catch (UtilizadorExistenteException e) {System.out.println(e.getMessage());}
-       return erro;
+        
+       if (this.utilizadores.containsKey(u.getEmail())) {throw new UtilizadorExistenteException("Utilizador já existe! ");}
+       else {
+           this.utilizadores.put(u.getEmail(),u);
+        } 
+       
     }
     
    public void listarVendedores (){
@@ -275,7 +280,7 @@ public class Imobiliaria implements Serializable
    public Set<String> getTopImoveis (int i){
        HashSet <String> topImoveis = new HashSet <String>();
        try{
-           if (imovel.isEmpty()) {throw new ImovelInexistenteException ("Não existem imóveis nos anúncios");}
+           if (imovel.isEmpty()) {throw new ImovelInexistenteException ("Não existem imóveis nos anúncios. ");}
            else {
            for (Imovel im : this.imovel.values()){
                 if (i>0) topImoveis.add(im.getMorada());
@@ -309,23 +314,25 @@ public class Imobiliaria implements Serializable
               
            }
          }
-         else {throw new ImovelInexistenteException ("Inseriu um estado inválido");}
+         else {throw new ImovelInexistenteException ("Inseriu um estado inválido. ");}
       }catch (ImovelInexistenteException e) {System.out.println(e.getMessage());}
       
     }
     
     public void adicFavorito(String morada) throws ImovelExisteException {
+        
         compradorAux = (Comprador) atual;
-        try {
+        boolean erro = true;
         for (Imovel i : this.imovel.values()){
             if (i.getMorada().equals(morada)) {
-                if (compradorAux.getFavoritosNaoOrdenados().contains(i)) {throw new ImovelExisteException ("Favorito já existente");}
-                else compradorAux.setFavorito(morada);
+                if (compradorAux.getFavoritosNaoOrdenados().contains(i)) {throw new ImovelExisteException ("Favorito já existente. ");}
+                else {compradorAux.setFavorito(morada);erro = false;}
+            
             }
             
         }
-        }catch (ImovelExisteException e) {System.out.println(e.getMessage());}
-        atual = compradorAux;
+        if (erro) {throw new ImovelExisteException ("Imóvel inválido ");}
+        atual = compradorAux;     
     }
     
     public void setFavorito(String morada) throws ImovelExisteException{
@@ -378,8 +385,7 @@ public class Imobiliaria implements Serializable
     
     public void removeFavorito (String morada) throws ImovelInexistenteException{
         compradorAux = (Comprador) atual;
-        try {
-        if  (compradorAux.getFavoritos().isEmpty()) {throw new ImovelInexistenteException ("Favoritos vazios");}
+        if  (compradorAux.getFavoritos().isEmpty()) {throw new ImovelInexistenteException ("Favoritos vazios. ");}
         else {
             Iterator<Imovel> itr=compradorAux.getFavoritos().iterator();
             while (itr.hasNext()){
@@ -390,42 +396,33 @@ public class Imobiliaria implements Serializable
                 else {throw new ImovelInexistenteException ("Nao encontrado");}
             }
         }
-       }catch (ImovelInexistenteException e){ System.out.println(e.getMessage());}
+      
    }
        
-   public boolean comprarImovel (String morada) throws ImovelInexistenteException{
-       boolean erro = true;
-       try {
-           if (imovel.isEmpty()) {throw new ImovelInexistenteException ("Não existem imóveis nos anúncios");}
-           else if (!imovel.containsKey(morada)) {throw new ImovelInexistenteException ("Não existe este imóvel nos anúncios");}
-           else if (imovel.get(morada).getEstado().equals("Reservado")) {throw new ImovelInexistenteException ("Imóvel já foi reservado");}
-           else if (imovel.get(morada).getEstado().equals("Vendido")) {throw new ImovelInexistenteException ("Imóvel já foi vendido");}
+   public void comprarImovel (String morada) throws ImovelInexistenteException{
+           if (imovel.isEmpty()) {throw new ImovelInexistenteException ("Não existem imóveis nos anúncios. ");}
+           else if (!imovel.containsKey(morada)) {throw new ImovelInexistenteException ("Não existe este imóvel nos anúncios. ");}
+           else if (imovel.get(morada).getEstado().equals("Reservado")) {throw new ImovelInexistenteException ("Imóvel já foi reservado. ");}
+           else if (imovel.get(morada).getEstado().equals("Vendido")) {throw new ImovelInexistenteException ("Imóvel já foi vendido. ");}
            else {
                for (Utilizadores u: utilizadores.values()){
                    if (u instanceof Vendedor){
                        vendedorAux = (Vendedor) u;
                        if (vendedorAux.getImoveisP().contains(imovel.get(morada))){
                            alteraEstadoImovel(morada,"Reservado");
-                           erro= false;
                        }
                        u = vendedorAux;
                     }
                }
   
            }
-           
-       }
-       catch (ImovelInexistenteException e){ System.out.println(e.getMessage());}
-       return erro;
     }
     
-    public boolean confirmarImovelComprado (String morada){
-        boolean erro = true;
-        try {
-           if (imovel.isEmpty()) {throw new ImovelInexistenteException ("Não existem imóveis nos anúncios");}
-           else if (!imovel.containsKey(morada)) {throw new ImovelInexistenteException ("Não existe este imóvel nos anúncios");}
-           else if (imovel.get(morada).getEstado().equals("Em venda")) {throw new ImovelInexistenteException ("Imóvel está em venda");}
-           else if (imovel.get(morada).getEstado().equals("Vendido")) {throw new ImovelInexistenteException ("Imóvel já foi vendido");}
+    public void confirmarImovelComprado (String morada) throws ImovelInexistenteException {
+           if (imovel.isEmpty()) {throw new ImovelInexistenteException ("Não existem imóveis nos anúncios. ");}
+           else if (!imovel.containsKey(morada)) {throw new ImovelInexistenteException ("Não existe este imóvel nos anúncios. ");}
+           else if (imovel.get(morada).getEstado().equals("Em venda")) {throw new ImovelInexistenteException ("Imóvel está em venda. ");}
+           else if (imovel.get(morada).getEstado().equals("Vendido")) {throw new ImovelInexistenteException ("Imóvel já foi vendido. ");}
            else {
                 for (Utilizadores u: utilizadores.values()){
                    if (u instanceof Vendedor){
@@ -434,7 +431,7 @@ public class Imobiliaria implements Serializable
                            vendedorAux.setImovelV(imovel.get(morada));
                            vendedorAux.getImoveisP().remove(imovel.get(morada));
                            alteraEstadoImovel(morada,"Vendido");
-                           erro = false;
+                           
                         }
                    }
                    if (u instanceof Comprador){
@@ -443,8 +440,7 @@ public class Imobiliaria implements Serializable
                    }
                 }
             }
-        }catch (ImovelInexistenteException e){ System.out.println(e.getMessage());}
-        return erro;
+       
     }
    
    public void carregaDados(String fich) throws Exception {
