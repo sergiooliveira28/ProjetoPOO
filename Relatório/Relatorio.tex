@@ -41,7 +41,7 @@
 Grupo 5
 \begin{tabular}[t]{lll}
 62134 & LCC  & Sérgio Oliveira \\
-66698 & LCC  & Carlos Silva\\
+62156 & LCC  & Carlos Silva\\
 \end{tabular}
 }
 
@@ -79,16 +79,14 @@ Nós somos o Sérgio Oliveira e o Carlos Silva, do grupo 18 da cadeira de Progra
 
 Vamos começar com a parte mais obvia de qualquer projeto.\\
 Para conseguirmos compilar este programa, recorremos a algumas bibliotecas da Interface de programação de aplicações do JAVA.\\
+
 Essas bibliotecas são as seguintes:
 \newline
-
 \begin{code}
 java.util;
 java.io;
 java.lang;
-
 \end{code}
-~\\
 
 Fizemos grande parte deste projeto no programa BlueJ mas devido a algumas limitações deste programa, começamos a tomar outros rumos.
 \newline
@@ -101,7 +99,6 @@ A interface situada na nossa classe principal com a main foi criada em Sublime T
 \newline
 
 Também recorremos à "Classe que abstrai a utilização da classe Scanner", criada pelo professor F. Mário Martins e a uma espécie de Feed de notícias com recurso a uma Queue que foi tirado de um tutorial.
-\newline
 \newline
 \newline
 
@@ -121,11 +118,8 @@ A classe é composta pelas variáveis estado, tipoImóvel, morada, precoPedido, 
 O clone do imóvel é ligeiramente diferente dos clones de classes normais, sendo ele:
 \newline
 \begin{code}
-
-...
  abstract Imovel clone();
 ...
-
 \end{code}
 ~\\
 
@@ -156,6 +150,9 @@ Como já está praticamente tudo falado da nossa classe abstrata, iremos então 
 \pagebreak
 
 \textbf{"Subclasses de Imóvel"}
+\newline
+\newline
+\includegraphics[scale=0.5]{003.png}	
 \newline
 
 Comecemos com a subclasse Moradia. Esta foi a primeira subclasse que fizemos do abstract Imóvel. 
@@ -329,35 +326,117 @@ Este é o nosso arranque, a classe que tem o controlo dos principais menus de ge
 ~\\
 ImOObiliaria é a grande responsável por listar dados. No entanto, insereImovel é dos únicos métodos nesta função que utiliza o algoritmo de criação de dados em vez de listar, sendo a implementação desta função nesta classe um pouco estranha.
 ~\\
+Nesta classe todas as variáveis estão a static para que não seja possível instanciar as mesmas
+variáveis noutras classes, ou seja, só existe uma instância deste campo estático.
+Esta classe está dividida em 4 partes:
+\newline
+\begin{itemize}
+\item Janelas;
+\item Menus;
+\item Métodos de edição de variáveis;
+\item Métodos de atualização de avisos.
+\end{itemize}
 
+A classe 'ImOObiliaria' terá que ser instanciada no método
+InitApp, para que se possa carregar/gerir os objetos.
+Para isto, existe a interface Serializable para que o nosso objeto guardado pela classe 'Imobiliaria'
+seja sempre compatível com o nosso programa. Ao ser implementado temos que ter em conta
+que poderá ocorrer eventos anormais, que caso aconteça, o nosso programa irá usar as Exceptions (que falaremos daqui a bocado)
+evitando que se fechará abruptamente gerando um erro. 
+~\\
 
 \pagebreak
 \section{Outras classes importantes}
 
 \textbf{Leilões}
+\newline
+~\\
 
+Leilões é a nossa classe que faz a gestão de um leilão. O vendedor tem a oportunidade de meter o seu imóvel em leilão disponível nas horas que o vendedor quiser. O vendedor tem também o poder de encerrar o leilão quando quiser através de uma opção do menu.
+~\\
+
+Um comprador pode entrar no leilão e pode escolher entre duas opções:
+\begin{itemize}
+\item Fazer uma licitação com dado um limite de euros, de X em X minutos, dados também pelo mesmo. 
+\item Fazer uma licitação imediatamente, sem recorrer ao sistema de limite de euros e de tempo.
+\end{itemize}
+\begin{quote}
+NOTA: Independentemente da opção que o comprador escolheu, ele não pode licitar menos que a licitação anterior.
+\end{quote}
+~\\
+
+Para que esta classe funcione perfeitamente, tivemos de implementar as seguintes partes da API do JAVA:
+\newline
 \begin{code}
-
+import java.util.Timer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Date;
+import java.util.TimerTask;
 \end{code}
-
-
-\pagebreak
-
+~\\
 \textbf{Aposta}
+\newline
+~\\
 
-\begin{code}
-
-\end{code}
+Esta classe é usada como suporte à classe Leilões para que consigámos usar um 
+\begin{verbatim}
+HashMap <String,Aposta>
+\end{verbatim}
+na parte dos leilões.
+Ela é constituída pela identificação do comprador em questão, da informação necessária à licitação e o imóvel que o mesmo quer ganhar.
 
 \textbf{Consulta}
+\newline
+~\\
 
-\textbf{Tempo}
+Esta classe é muito básica, dando-nos apenas o número de visualizações que cada imóvel da base de dados tem.
+Cada consulta começa sem nenhuma visualização como é obvio.
+\begin{code}
+public Consulta()\{
+        this.contagem = 0;
+    \}
+\end{code}
 
+
+\textbf{Feed}
+\newline
+~\\
+
+Esta classe contém a nossa queue de 10 posições que vai atualizando ao longo das movimentações que fazemos aos dados.
+~\\
+
+Quando a queue chega aos 10 elementos e queremos adicionar mais um elemento de informação, a queue elimina automaticamente o último elemento que tem.
 \pagebreak
 
 \section{Quando o código rebenta...}
 
 \textbf{Exceptions}
+\newline
+~\\
+
+Sem contar com a principal classe 'Exception', temos 8 classes que usam a forma de apanhar erros ao longo do código.
+\\
+
+O princípio das classes é simples: imprimir as mensagens de erro ou fazer qualquer outra coisa que o programador quiser.
+\newline
+\begin{code}
+public class TipoInvalidoException extends Exception
+\{
+    TipoInvalidoException(String message)\{
+       super(message);
+    \}
+\}
+\end{code}
+~\\
+
+Cada operação arriscada é acompanhada com um mecanismo chamado 'try'. Este mecanismo não funciona sem 'catch', que faz com que detete erros no código. Quem "dispara esse alarme" é o 'throw', que interage com o 'catch', fazendo com que o código pare de executar o código dentro do try, fazendo um "bypass" a essa secção e executando o código dentro da dada Exception. 
+~\\
+
+Quando não ocorre um erro grave no código, o programa executa na mesma o código dentro do try/catch e segue normalmente.  
+
 \pagebreak
 
 %-------------------- ISTO É UM SEPARADOR ... A SÉRIO----------------------------------------------------------------------
@@ -365,27 +444,19 @@ ImOObiliaria é a grande responsável por listar dados. No entanto, insereImovel
 \section{Conclusão}
 
 Principais dificuldades que não foram superadas neste projeto:
-
-~\\
-UTF-8 (utilizaÃ§Ã£o de caract§Ã£res especiais).
-~\\
-Leilões (comprador apostar de x em x minutos).
-~\\
-Bug estupido do double mostrar 0.0 em vez do valor devido.
-~\\
-Top X de imóveis não foi inteiramente implementado.
-~\\
-
+\begin{itemize}
+\item UTF-8 (utilizaÃ§Ã£o de caract§Ã£res especiais).
+\item Leilões (comprador apostar de x em x minutos).
+\item Bug estupido do double mostrar 0.0 em vez do valor devido.
+\item Top X de imóveis não foi inteiramente implementado.
+\end{itemize}
 Dificuldades superadas:
-~\\
-fazer catch de uma exception no lugar errado...
-~\\
-Clone() (não dava o apontador do que queriamos)
-~\\
-Mapeamento de imóveis dava todos os imóveis para todos os vendedores.
-~\\
-Comprar um imóvel não alterava o estado do imóvel para reservado.
-
+\begin{itemize}
+\item fazer catch de uma exception no lugar errado...
+\item Clone() (não dava o apontador do que queriamos)
+\item Mapeamento de imóveis dava todos os imóveis para todos os vendedores.
+\item Comprar um imóvel não alterava o estado do imóvel para reservado.
+\end{itemize}
 
 Este trabalho foi extremamente produtivo e só me trouxe vantagens para conhecer o mundo dos Exceptions, visto que começamos a "atinar" com eles.
 
