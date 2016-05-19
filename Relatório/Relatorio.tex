@@ -61,8 +61,17 @@ Grupo 5
                                                         % no documento.
 
 \section{Introdução}
+~\\
 
-Nós somos o Sérgio Oliveira e o Carlos Silva, do grupo 18 da cadeira de Programação Orientada aos Objetos. Temos como objetivo construir uma interface (gráfica ou terminal, a escolha é nossa) de gestão de uma imobiliária.
+Nós somos o grupo 18 da cadeira de Programação Orientada aos Objetos e pertencemos ao curso de Ciências da Computação.
+~\\ 
+
+Temos como objetivo construir uma interface (gráfica ou terminal, a escolha é nossa) de gestão de uma imobiliária.
+~\\
+
+Este projeto é escrito usando conhecimentos adquiridos nas aulas de Programação Orientada aos Objetos e conhecimentos pessoais.
+A linguagem de programação usada foi a linguagem JAVA, uma das principais linguagens orientadas aos objetos que é conhecida por ser extremamente rica em documentação online, muito dinâmica e fácil de compreender.
+~\\
 
 
 %\begin{figure*}[!b]
@@ -73,6 +82,7 @@ Nós somos o Sérgio Oliveira e o Carlos Silva, do grupo 18 da cadeira de Progra
 \pagebreak
 
 \section{Primeiras classes}
+~\\
 
 \textbf{JAVA API}
 \newline
@@ -232,6 +242,7 @@ NOTA: quando construímos um utilizador (vendedor ou comprador) vazio, a flag re
 \end{quote}
 
 ~\\
+
 Temos metido um apontador para a nossa principal "base de dados" (se é que podemos chamar assim). 
 É também uma declaração importante na nossa superclasse que se deixássemos de lado, provavelmente não funcionaria da maneira que queriamos (é de notar que os principais métodos de procura de imóveis estão quase todas nos utilizadores).
 \newline
@@ -251,21 +262,28 @@ As subclasses tem pouco para mostrar em código, mas são extremamente precisas 
 
 \textbf{Vendedor}
 ~\\
+
 Um vendedor registado consegue ter permissões avaçandas ao programa, nomeadamente aceder ao menu exclusivo dos vendedores e a algumas opções do menu dos leilões. \\
+
 A classe Vendedor não contém grandes operações. Tem em vez disso dois portfólios distintos: um para armazenar os imóveis que estão em venda na base de dados e outro para\\
 registar os imóveis que já foram vendidos.
 ~\\
+
 O vendedor também tem a possibilidade de remover diretamente um imóvel da base de dados, utilizando para isso o apontador para a classe Imobiliaria.
 
 
 \textbf{Comprador}
 ~\\
+
 Este estado também tem as suas únicas permissões não tão avançadas como um vendedor. Um comprador pode aceder ao menu exclusivo dos compradores, 
 onde a criação, edição ou a eliminação de todos os imóveis não são permitidos.
 \\
+
 Um comprador também consegue ter acesso aos leilões. No entanto dar início a um dado leilão ou encerrar um leilão não são operações permitidas.
+
 O comprador, ao contrário do vendedor, não tem nenhum portfólio de imóveis em venda ou vendidos mas sim uma lista de imóveis da escolha do comprador que possa gostar mais.
 \\
+
 A classe comprador é das únicas classes que recorre à ordenação de listas, recorrendo para isso às classes Comparator que estão situadas no projeto.
 ~\\
 \newline
@@ -273,6 +291,7 @@ A classe comprador é das únicas classes que recorre à ordenação de listas, 
 ... TreeSet <Imovel> (new ImovelStringComparator ()); ...
 \end{code}
 ~\\
+
 Ambas as classes recorrem ao método clone() para no caso de querermos registar informação de um dado utilizador sem alterar absolutamente nada do objeto original.
 
 
@@ -286,6 +305,7 @@ Ambas as classes recorrem ao método clone() para no caso de querermos registar 
 
 Esta classe é a classe que provavelmente tem o maior número de métodos do nosso projeto (a grande responsável pela criação de dados).
 \\
+
 As variáveis de instância desta classe são as que fazem o armazenamento de grande parte dos dados dos imóveis, utilizadores e um feed de notícias . 
 \\
 
@@ -294,13 +314,16 @@ Quase todos os nossos getters recorrem a uma lista ou map auxiliares, de forma a
 
 A classe faz-nos a gestão do inicio e do encerramento da sessão atual, não continuando se a base de dados dos utilizadores não tiver conteúdo ou se nenhuma sessão estiver ativa respetivamente.
 \\
+
 Ao iniciarmos um programa, nós temos que criar um ponto em que haja um tipo de utilizador que não seja abstrato (pois não podemos instanciar uma classe abstrata) nem esteja registado.\\
+
 Para isso recorremos a uma maneira de simular o que queriamos, criando um método init que inicia um Comprador sem qualquer informação mas que esteja ligado à nossa base de dados, em que a flag registado seja false para não ter permissões aos nossos menus especiais.
 \newline
 \begin{code}
    public void init()\{atual = new Comprador ("","","","","",this,false);\}
 \end{code}
 ~\\
+
 Ao terminar a sessão, a classe cria um ponto de situação em que o utilizador não tem informação e não está registado no sistema (boolean registado = false;).
 \newline
 \begin{code}
@@ -324,10 +347,13 @@ Para isso usamos então as classes predefinidas de JAVA ObjectInputStream e Obje
 Este é o nosso arranque, a classe que tem o controlo dos principais menus de gestão do utilizador, de pesquisa, de vendedor e comprador, do leilão e do mapeamento de imóveis mais o top das consultas de imóveis do programa.
 
 ~\\
+
 ImOObiliaria é a grande responsável por listar dados. No entanto, insereImovel é dos únicos métodos nesta função que utiliza o algoritmo de criação de dados em vez de listar, sendo a implementação desta função nesta classe um pouco estranha.
 ~\\
+
 Nesta classe todas as variáveis estão a static para que não seja possível instanciar as mesmas
 variáveis noutras classes, ou seja, só existe uma instância deste campo estático.
+
 Esta classe está dividida em 4 partes:
 \newline
 \begin{itemize}
@@ -443,14 +469,16 @@ Quando não ocorre um erro grave no código, o programa executa na mesma o códi
  
 \section{Conclusão}
 
-Principais dificuldades que não foram superadas neste projeto:
+No fim de tudo, encontrámos vários tópicos que não podiamos excluir na nossa conclusão.
+
+As principais dificuldades que não foram superadas neste projeto:
 \begin{itemize}
 \item UTF-8 (utilizaÃ§Ã£o de caract§Ã£res especiais).
 \item Leilões (comprador apostar de x em x minutos).
 \item Bug estupido do double mostrar 0.0 em vez do valor devido.
 \item Top X de imóveis não foi inteiramente implementado.
 \end{itemize}
-Dificuldades superadas:
+As dificuldades que foram superadas:
 \begin{itemize}
 \item fazer catch de uma exception no lugar errado...
 \item Clone() (não dava o apontador do que queriamos)
@@ -458,6 +486,6 @@ Dificuldades superadas:
 \item Comprar um imóvel não alterava o estado do imóvel para reservado.
 \end{itemize}
 
-Este trabalho foi extremamente produtivo e só me trouxe vantagens para conhecer o mundo dos Exceptions, visto que começamos a "atinar" com eles.
+Não podemos deixar de dizer que este trabalho foi obviamente produtivo e só nos trouxe vantagens para conhecer o mundo dos Exceptions, visto que começamos a "atinar" com eles. A mesma coisa aconteceu com as Interfaces, que eram demasiado "abstratas" para nós antes deste projeto.
 
 \end{document}
