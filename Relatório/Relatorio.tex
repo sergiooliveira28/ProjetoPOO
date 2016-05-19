@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage{a4wide}                        
+\usepackage{a4wide}
 \usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{color}
@@ -210,10 +210,10 @@ Todas estas subclasses tem métodos em comum. Para facilitar a vida e para organ
 \newline
 \newline
 
-A classe 'Pesquisas'  irá dar jeito para pesquisar o número de quartos ou o número de WC's de uma dada 'Moradia' ou de um dado 'Apartamento'.
+A classe 'Pesquisas'  será útil para pesquisar o número de quartos ou o número de WC's de uma dada 'Moradia' ou de um dado 'Apartamento'.
 \newline
 
-'Habitável' por outro lado dará jeito para saber se a nossa loja será habitável ou não e também retornar o preço pedido de um dado 'Imóvel' (sendo 'Terreno' a única exceção, a classe não tem a variável 'preçoPedido' ).    
+'Habitável' por outro lado terá utilidade para saber se a loja será habitável ou não e também retornar o preço pedido de um dado 'Imóvel' (sendo 'Terreno' a única exceção, a classe não tem a variável 'preçoPedido' ).    
 
 \pagebreak
 
@@ -245,8 +245,8 @@ NOTA: quando construímos um utilizador (vendedor ou comprador) vazio, a flag re
 
 ~\\
 
-Temos dentro da classe 'Utilizadores' um apontador para a nossa principal base de dados 'Imobiliaria' . 
-É também uma declaração importante na nossa superclasse que se deixássemos de lado, provavelmente não funcionaria da maneira que queriamos (é de notar que os principais métodos de procura de imóveis estão quase todas nos utilizadores).
+Temos dentro da classe 'Utilizadores' um apontador para a principal base de dados 'Imobiliaria' . 
+É também uma declaração importante na superclasse que se deixássemos de lado, provavelmente não funcionaria da maneira que queriamos (é de notar que os principais métodos de procura de imóveis estão quase todos nos utilizadores).
 \newline
 
 Esse apontador é feito usando:
@@ -256,10 +256,10 @@ Esse apontador é feito usando:
     private Imobiliaria imob;
 ...
 \end{code}
-que permite então aceder sem problemas aos métodos principais da nossa classe 'Imobiliaria'.
+que permite então aceder sem problemas aos métodos principais da classe 'Imobiliaria'.
 \newline
 
-O resto das variáveis que são usadas na superclasse 'Utilizadores' é bastante normal e o básico para o funcionamento do projeto 'ImOObiliaria'.
+O resto das variáveis que são usadas na superclasse 'Utilizadores' são bastante normais e constituem o básico para o funcionamento do projeto 'ImOObiliaria'.
 \newline
 
 As subclasses tem pouco para mostrar em código, mas são extremamente precisas para que haja uma correta gestão dos dados.
@@ -279,10 +279,10 @@ O vendedor também tem a possibilidade de remover diretamente um imóvel da base
 \textbf{Comprador}
 ~\\
 
-Este estado também tem as suas únicas permissões não tão avançadas como um vendedor. Um comprador pode aceder ao menu exclusivo dos compradores, onde a criação, edição ou a eliminação de todos os imóveis não são permitidos.
+Esta classe também tem as suas únicas permissões, mas não tão avançadas como um vendedor. Um comprador pode aceder ao menu exclusivo dos compradores, em que poderá comprar um determinado imóvel. No entanto, a criação, edição ou a eliminação de todos os imóveis não são permitidos.
 \\
 
-Um comprador também consegue ter acesso aos leilões. No entanto dar início a um dado leilão ou encerrar um leilão não são operações permitidas.
+Um comprador também consegue ter acesso aos leilões, mas dar início a um dado leilão ou encerrar um leilão não são operações permitidas.
 
 O comprador, ao contrário do vendedor, não tem nenhum portfólio de imóveis em venda ou vendidos mas sim uma lista de imóveis da escolha do comprador que possa gostar mais.
 \\
@@ -312,7 +312,7 @@ Esta classe é a classe que provavelmente tem o maior número de métodos do nos
 As variáveis de instância desta classe são as que fazem o armazenamento de grande parte dos dados dos imóveis, utilizadores e um feed de notícias . 
 \\
 
-Quase todos os 'getters' recorrem a uma lista ou map auxiliares, de forma a que retornemos corretamente os dados enquanto que os setters são práticamente normais.
+Quase todos os 'getters' recorrem a uma lista ou map auxiliares, de forma a que retornemos corretamente os dados enquanto que os 'setters' são práticamente normais.
 \\
 
 A classe faz a gestão do inicio e do encerramento da sessão atual, não continuando se a base de dados dos utilizadores não tiver conteúdo ou se nenhuma sessão estiver ativa respetivamente.
@@ -320,7 +320,7 @@ A classe faz a gestão do inicio e do encerramento da sessão atual, não contin
 
 Ao iniciarmos um programa, temos que criar um ponto em que haja um tipo de utilizador que não seja abstrato (pois não podemos instanciar uma classe abstrata) nem esteja registado.\\
 
-Para isso recorre-se a uma maneira de simular o que queriamos, criando um método init que inicia um Comprador sem qualquer informação mas que esteja ligado à base de dados, em que a flag registado seja 'false'para não ter permissões aos nossos menus especiais.
+Para isso recorre-se a uma maneira de simular o que queriamos, criando um método 'init' que inicia um Comprador sem qualquer informação mas que esteja ligado à base de dados, em que a flag 'registado' seja 'false' para não ter permissões aos nossos menus especiais.
 \newline
 \begin{code}
    public void init()\{atual = new Comprador (',',',',',this,false);\}
@@ -339,7 +339,7 @@ Os imóveis poderão ser registados, editados, listados ou removidos através de
 O algoritmo do mapeamento de imóveis e do top de visitas dos imóveis também foi inserido nesta classe e recorre a apontadores dos dois tipos de utilizadores, para que possámos relacionar as visitas que os compradores ou os vendedores fazem aos imóveis, ou relacionar os vendedores e os seus respetivos imóveis em venda/reservados/vendidos.
 ~\\
 
-Dois dos métodos mais importantes desta classe são os que permite a função de carregamento ou de salvaguarda de objetos, ou seja, guardar o estado inteiro do nosso programa.
+Dois dos métodos mais importantes desta classe são os que permitem a função de carregamento ou de salvaguarda de objetos, ou seja, guardar o estado inteiro do nosso programa.
 Para isso usa-se então as classes predefinidas de JAVA ObjectInputStream e ObjectOutputStream. 
 ~\\
 
@@ -351,7 +351,7 @@ Este é o motor de arranque, a classe que tem o controlo dos principais menus de
 
 ~\\
 
-ImOObiliaria é a grande responsável por listar dados. No entanto, insereImovel é dos únicos métodos nesta função que utiliza o algoritmo de criação de dados em vez de listar, sendo a implementação desta função nesta classe um pouco estranha.
+ImOObiliaria é a grande responsável por listar dados. No entanto, 'insereImovel' é dos únicos métodos nesta função que utiliza o algoritmo de criação de dados em vez de listar, sendo a implementação desta função nesta classe um pouco estranha.
 ~\\
 
 Nesta classe todas as variáveis estão a static para que não seja possível instanciar as mesmas
@@ -386,7 +386,7 @@ Leilões é a classe que faz a gestão de um leilão. O vendedor tem a oportunid
 
 Um comprador pode entrar no leilão e pode escolher entre duas opções:
 \begin{itemize}
-\item Fazer uma licitação com dado um limite de euros, de X em X minutos, dados também pelo mesmo. 
+\item Fazer uma licitação, dando um limite de euros, de X em X minutos; 
 \item Fazer uma licitação imediatamente, sem recorrer ao sistema de limite de euros e de tempo.
 \end{itemize}
 \begin{quote}
@@ -472,17 +472,19 @@ Quando não ocorre um erro grave no código, o programa executa na mesma o códi
 %-------------------- ISTO É UM SEPARADOR ... A SÉRIO----------------------------------------------------------------------
  
 \section{Conclusão}
+~\\
 
-No fim de tudo, encontrámos vários tópicos que não podiamos excluir na nossa conclusão.
-
-As principais dificuldades que não foram superadas neste projeto:
+Por fim, encontrámos vários tópicos que não podiamos excluir da nossa conclusão.
+~\\
+As principais dificuldades que não foram superadas neste projeto foram as seguintes:
 \begin{itemize}
 \item UTF-8 (utilizaÃ§Ã£o de caract§Ã£res especiais).
 \item Leilões (comprador apostar de x em x minutos).
 \item Bug de uma variável 'double'  mostrar 0.0 em vez do valor devido.
 \item Top X de imóveis não foi inteiramente implementado.
 \end{itemize}
-As dificuldades que foram superadas:
+~\\
+Por outro lado, as dificuldades que foram superadas foram estas:
 \begin{itemize}
 \item fazer catch de uma exception no lugar errado...
 \item Clone() (não dava o apontador do que queriamos)
