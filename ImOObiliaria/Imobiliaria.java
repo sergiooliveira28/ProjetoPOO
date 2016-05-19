@@ -97,6 +97,37 @@ public class Imobiliaria implements Serializable
        
    }
    
+   public List <Habitavel> getHabitaveis (int preco){
+      ArrayList <Habitavel> aux = new ArrayList <Habitavel>();
+      Moradia moradiaAux;
+      Apartamento apartamentoAux;
+      LojaHabitavel lojaHabitavelAux;
+      for (Imovel i : imovel.values()){
+       if ((i instanceof Moradia) && (i.getPrecoPedido()<preco)){
+           moradiaAux = (Moradia) i;
+          if (moradiaAux.getHabitavel()){
+              aux.add(moradiaAux);
+           }
+        
+       }
+       if ((i instanceof Apartamento) && (i.getPrecoPedido()<preco)){
+           apartamentoAux = (Apartamento) i;
+          if (apartamentoAux.getHabitavel()){
+              aux.add(apartamentoAux);
+           }
+        
+       }
+       if ((i instanceof LojaHabitavel) && (i.getPrecoPedido()<preco)){
+           lojaHabitavelAux = (LojaHabitavel) i;
+          if (lojaHabitavelAux.getHabitavel()){
+              aux.add(lojaHabitavelAux);
+           }
+        
+       }
+       
+      }
+     return aux;
+    }
    
    public Imobiliaria clone(){
         return new Imobiliaria(this);

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.16)  19 MAY 2016 12:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.16)  19 MAY 2016 15:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -501,17 +501,17 @@ LaTeX Info: Redefining \nameref on input line 48.
 \@outlinefile=\write3
 \openout3 = `Relatorio.out'.
 
- <000.jpg, id=28, 281.05pt x 356.33125pt>
-File: 000.jpg Graphic file (type jpg)
+ <000.png, id=28, 313.17pt x 407.5225pt>
+File: 000.png Graphic file (type png)
 
-<use 000.jpg>
-Package pdftex.def Info: 000.jpg used on input line 52.
-(pdftex.def)             Requested size: 84.31564pt x 106.90019pt.
- <001.png, id=29, 232.87pt x 263.98625pt>
+<use 000.png>
+Package pdftex.def Info: 000.png used on input line 52.
+(pdftex.def)             Requested size: 93.95172pt x 122.25769pt.
+ <001.png, id=29, 359.3425pt x 576.1525pt>
 File: 001.png Graphic file (type png)
  <use 001.png>
 Package pdftex.def Info: 001.png used on input line 53.
-(pdftex.def)             Requested size: 69.86153pt x 79.19647pt.
+(pdftex.def)             Requested size: 71.86722pt x 115.22845pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <20.74> on input line 60.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -531,16 +531,22 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 62.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./000.jpg> <./001.png>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./000.png> <./001.png>]
 LaTeX Font Info:    Font shape `OT1/iwona/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/iwona/b/n' tried instead on input line 63.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 63.
+
+<004.png, id=37, 1714.405pt x 910.40125pt>
+File: 004.png Graphic file (type png)
+ <use 004.png>
+Package pdftex.def Info: 004.png used on input line 72.
+(pdftex.def)             Requested size: 428.6002pt x 227.59975pt.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 74.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 74.
- [2]
+ [2 <./004.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 75.
 LaTeX Font Info:    Font shape `OT1/iwona/bx/n' in size <12> not available
@@ -559,7 +565,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
-<002.png, id=42, 994.71625pt x 367.3725pt>
+<002.png, id=45, 994.71625pt x 367.3725pt>
 File: 002.png Graphic file (type png)
  <use 002.png>
 Package pdftex.def Info: 002.png used on input line 95.
@@ -786,38 +792,43 @@ Package babel Info: Redefining portuges shorthand "|
 
 
 LaTeX Font Warning: Font shape `OT1/iwona/m/ui' undefined
-(Font)              using `OT1/iwona/m/n' instead on input line 298.
+(Font)              using `OT1/iwona/m/n' instead on input line 299.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 312.
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--307
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 321.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 312.
+(babel)             in language  on input line 321.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 312.
+(babel)             in language  on input line 321.
 [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 312.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 321.
  (./Relatorio.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 312.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 312.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 321.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 321.
 Package rerunfilecheck Info: File `Relatorio.out' has not changed.
 (rerunfilecheck)             Checksum: 7C10ED12825053C380B019A05F442C7A;329.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 312.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 321.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 48 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5997 strings out of 494957
- 87549 string characters out of 6180028
+ 6001 strings out of 494957
+ 87599 string characters out of 6180028
  176744 words of memory out of 5000000
- 9135 multiletter control sequences out of 15000+600000
+ 9139 multiletter control sequences out of 15000+600000
  31300 words of font info for 48 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 29i,13n,32p,285b,1304s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,13n,32p,285b,1310s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/iwona/sy-iwona.e
 nc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/iwona/rm-iwona.enc}</usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texl
@@ -826,10 +837,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/nowacki/iwona/iwonar.pfb></usr/share/texlive/texmf-dist/fonts/type1/nowacki
 /iwona/iwonari.pfb>
-Output written on Relatorio.pdf (12 pages, 329292 bytes).
+Output written on Relatorio.pdf (12 pages, 837946 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
+ 120 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  19 named destinations out of 1000 (max. 500000)
- 64 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

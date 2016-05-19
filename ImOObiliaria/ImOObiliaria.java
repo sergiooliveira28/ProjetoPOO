@@ -58,6 +58,14 @@ public class ImOObiliaria
                     consultas();
                     System.out.println("\nENTER para continuar ");Input.lerString();
                     break;
+                    
+                case 9:
+                    limparTexto();
+                    System.out.println("\nDiga até que preço máximo quer listar todos os imóveis habitáveis\n");
+                    escolha = Input.lerInt();
+                    System.out.println(imobi.getHabitaveis(escolha));
+                    System.out.println("\nENTER para continuar ");Input.lerString();
+                    break;
                 case 0:
                     limparTexto();
                     acabado = sair();
@@ -635,7 +643,8 @@ public class ImOObiliaria
         System.out.println("|    _____     5: Menu de comprador          |                    |");
         System.out.println("|   |     |    6: Leilões                    | Nº de Imóveis:     |");
         System.out.println("|   |.    |    7: Mapeamento de imóveis      |   -- "+imobi.getImovel().size()+" --          |");
-        System.out.println("|   |     |    8: Consulta de imóveis        |                    |");
+        System.out.println("|   |     |    8: Consulta de imóveis        |                    |"); 
+        System.out.println("|   |     |    9: Consulta de habitáveis     |                    |");
         System.out.println("|___|_____|____0: Sair do programa___________|____________________|");
         System.out.println("\n***Introduza a sua opcao: ");
     }
