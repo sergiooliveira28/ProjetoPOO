@@ -28,20 +28,21 @@
 
 \title{\textsf{Programação Orientada aos Objetos} \\
 \begin{tabular}[t]{c}
-{\small LCC}
-{\small Universidade do Minho} \\
+{\small } \\
+{\small Licenciatura em Ciências da Computação | Universidade do Minho} \\
 {\small Ano Letivo 2015/2016}  \\
-{\small ImOObiliária | Trabalho prático} \\
+{\small ImOObiliária} \\
+{\small (Trabalho prático)} \\
 \end{tabular}
 }
 
 \author{\small
 \\
 \\
-Grupo 5
 \begin{tabular}[t]{lll}
-62134 & LCC  & Sérgio Oliveira \\
-62156 & LCC  & Carlos Silva\\
+ &  \ \ \ \ \ \ \ \  Grupo 18 & \\
+62134  & LCC  & Sérgio Oliveira \\
+62156  & LCC  & Carlos Silva    \\
 \end{tabular}
 }
 
@@ -63,13 +64,15 @@ Grupo 5
 \section{Introdução}
 ~\\
 
-Nós somos o grupo 18 da cadeira de Programação Orientada aos Objetos e pertencemos ao curso de Ciências da Computação.
+Somos o grupo 18 da cadeira de Programação Orientada aos Objetos e pertencemos ao curso de Ciências da Computação.
 ~\\ 
 
 Temos como objetivo construir uma interface (gráfica ou terminal, a escolha é nossa) de gestão de uma imobiliária.
 ~\\
 
 Este projeto é escrito usando conhecimentos adquiridos nas aulas de Programação Orientada aos Objetos e conhecimentos pessoais.
+~\\
+
 A linguagem de programação usada foi a linguagem JAVA, uma das principais linguagens orientadas aos objetos que é conhecida por ser extremamente rica em documentação online, muito dinâmica e fácil de compreender.
 ~\\
 
@@ -108,21 +111,20 @@ Fizemos grande parte deste projeto no programa BlueJ mas devido a algumas limita
 A interface situada na nossa classe principal com a main foi criada em Sublime Text (com a ajuda dos cursores múltiplos) em conjunto com o BlueJ e foi também utilizado ocasionalmente o IntelliJ IDEA.
 \newline
 
-Também recorremos à "Classe que abstrai a utilização da classe Scanner", criada pelo professor F. Mário Martins e a uma espécie de Feed de notícias com recurso a uma Queue que foi tirado de um tutorial.
-\newline
+Também foi usada a 'Classe que abstrai a utilização da classe Scanner', criada pelo professor F. Mário Martins e uma espécie de Feed de notícias com recurso a uma Queue que foi tirado de um tutorial.
 \newline
 
-Sem mais demoras, passaremos a uma das principais partes do nosso projeto, os imóveis.
+Sem mais demoras, vamos passar a uma das principais partes do nosso projeto, os imóveis.
 
 \pagebreak
 
 \textbf{\\Imóvel}
 \newline
 
-"Imóvel" é a primeira classe que começamos a fazer e é uma das duas classes abstratas do nosso programa, para conseguirmos criar imóveis mais específicos, neste caso, para dividi-los em diversas categorias para determinarmos variáveis extra. 
+'Imóvel' é a primeira classe que começamos a fazer e é uma das duas classes abstratas do nosso programa, para conseguirmos criar imóveis mais específicos, neste caso, para dividi-los em diversas categorias para determinarmos variáveis extra. 
 \newline
 
-A classe é composta pelas variáveis estado, tipoImóvel, morada, precoPedido, precoMinimo e visitas. 
+A classe é composta pelas variáveis 'estado', 'tipoImóvel', 'morada', 'precoPedido', 'precoMinimo' e 'visitas'. 
 \newline
 
 O clone do imóvel é ligeiramente diferente dos clones de classes normais, sendo ele:
@@ -142,10 +144,10 @@ public String toString()\{
 \end{code}
 ~\\
 
-Também existe a opção de retornar, gravar e incrementar as visitas aos nossos imóveis para uso na classe Consulta, para que quando um utilizador qualquer aceder a um dado imóvel, o sistema consiga registar esse acesso.
+Existe a opção de retornar, gravar e incrementar as visitas aos nossos imóveis para uso na classe 'Consulta', para que quando um utilizador qualquer aceder a um dado imóvel, o sistema consiga registar esse acesso.
 \newline
 
-Imovel está também povoado pelo típico equals() muito predefinido.
+'Imovel' está também povoado pelo típico equals() muito predefinido.
 \newline
 \begin{code}
 ...
@@ -159,72 +161,72 @@ public boolean equals(Object o)\{
 Como já está praticamente tudo falado da nossa classe abstrata, iremos então descer na nossa herança para elementos menos abstratos.
 \pagebreak
 
-\textbf{"Subclasses de Imóvel"}
+\textbf{'Subclasses de Imóvel'}
 \newline
 \newline
 \includegraphics[scale=0.5]{003.png}	
 \newline
 
-Comecemos com a subclasse Moradia. Esta foi a primeira subclasse que fizemos do abstract Imóvel. 
+Comecemos com a subclasse 'Moradia'. Esta foi a primeira subclasse que fizemos do abstract 'Imovel'. 
 Como é habitual nas subclasses, fazemos construtores importando sempre as variáveis importantes da nossa classe abstrata através do método super(), subindo na herança para a nossa superclasse.
 \newline
 
-A subclasse Apartamento traz um tipo de variável um pouco habitual nas subclasses que fizemos que é neste caso o boolean. 
+A subclasse 'Apartamento' traz um tipo de variável um pouco habitual nas subclasses que fizemos que é neste caso o 'boolean'. 
 Esta subclasse também será importante para outra classe que falaremos daqui a pouco.
 \newline
 
-Tanto a classe Moradia como a classe Apartamento têm uma String em comum (Tipo). No entanto, os tipos das duas classes diferem uma da outra. Enquanto que a classe Moradia só aceita como tipos: Isolada,Germinada,Banda e Gaveto
+Tanto a classe 'Moradia' como a classe 'Apartamento' têm uma String em comum (Tipo). No entanto, os tipos das duas classes diferem uma da outra. Enquanto que a classe Moradia só aceita como tipos: 'Isolada', 'Germinada', 'Banda' e 'Gaveto'
 \newline
 \begin{code}
 
-if (!tipo.equals("Isolada")&&!tipo.equals("Germinada")&&
-!tipo.equals("Banda")&&!tipo.equals("Gaveto"))
-{throw new TipoInvalidoException("Tipo de imóvel inválido");}
+if (!tipo.equals('Isolada')&&!tipo.equals('Germinada')&&
+!tipo.equals('Banda')&&!tipo.equals('Gaveto'))
+{throw new TipoInvalidoException('Tipo de imóvel inválido');}
 
 \end{code}
 ~\\
 
-A subclasse Apartamento só aceita estes seguintes tipos: Simples,Duplex,Triplex
+A subclasse Apartamento só aceita estes seguintes tipos: 'Simples', 'Duplex', 'Triplex'
 \begin{code}
-if (!tipo.equals("Simples")&&!tipo.equals("Duplex")&&!tipo.equals("Triplex"))
-{throw new TipoInvalidoException("Tipo de imóvel inválido");}
+if (!tipo.equals('Simples')&&!tipo.equals('Duplex')&&!tipo.equals('Triplex'))
+{throw new TipoInvalidoException('Tipo de imóvel inválido');}
 
 \end{code}
 ~\\
 
-Nota: Embora fora das classes, se estas condições não forem aceites, elas irão gerar erros que mais tarde iremos falar.
+Nota: Embora fora das classes, se estas condições não forem aceites, elas irão gerar erros que mais tarde irá ser tratado.
 \newline
 \newline
 \newline
 
-A subclasse Terreno segue o mesmo príncipio das de cima, sendo o nome da String ligeiramente diferente, apropriadoPara, tal como a subclasse Loja que tem tiponegocio como nome da String.
+A subclasse Terreno segue o mesmo príncipio das de cima, sendo o nome da String ligeiramente diferente, 'apropriadoPara', tal como a subclasse Loja que tem 'tiponegocio' como nome da String.
 \newline
 
-Aqui entra a importância da Apartamento, pois uma classe Loja pode ser habitável. Ora, podemos fazer uma subclasse de Loja, ficando assim com uma subclasse LojaHabitavel, em que o principal objetivo é ligar dados do apartamento a uma dada loja.
-\newline
-\newline
-
-Todas estas subclasses tem métodos em comum. Para facilitar a vida e para organização de código, nós criámos duas interfaces (Pesquisa e Habitável).
+Aqui entra a importância da 'Apartamento', pois uma classe Loja pode ser habitável. Ora, podemos fazer uma subclasse de 'Loja', ficando assim com uma subclasse 'LojaHabitavel', em que o principal objetivo é ligar dados do apartamento a uma dada loja.
 \newline
 \newline
 
-Pesquisas irá dar jeito para pesquisar o número de quartos ou o número de WC's de uma dada Moradia ou de um dado Apartamento.
+Todas estas subclasses tem métodos em comum. Para facilitar a vida e para organização de código, foram criadas duas interfaces ('Pesquisa' e 'Habitável' ).
+\newline
 \newline
 
-Habitável por outro lado dá-nos jeito para saber se a nossa loja será habitável ou não e também retornar o preço pedido de um dado Imóvel (sendo Terreno a única exceção, a classe não tem a variável preçoPedido).    
+A classe 'Pesquisas'  irá dar jeito para pesquisar o número de quartos ou o número de WC's de uma dada 'Moradia' ou de um dado 'Apartamento'.
+\newline
+
+'Habitável' por outro lado dará jeito para saber se a nossa loja será habitável ou não e também retornar o preço pedido de um dado 'Imóvel' (sendo 'Terreno' a única exceção, a classe não tem a variável 'preçoPedido' ).    
 
 \pagebreak
 
 \textbf{Utilizadores}
 ~\\
 
-Tivemos que implementar 3 outras classes para criar um cenário de gestão de utilizadores. 
+Implementámos 3 outras classes para criar um cenário de gestão de utilizadores. 
 \newline
 
-Temos uma classe abstrata chamada Utilizador que tem outras duas subclasses ligadas a ela, sendo elas Vendedor e Comprador.
+Temos uma classe abstrata chamada 'Utilizador' que tem outras duas subclasses ligadas a ela, sendo elas 'Vendedor' e 'Comprador' .
 \newline
 
-No projeto ImOObiliaria, temos 3 estados que um utilizador pode usar:
+No projeto 'ImOObiliaria', temos 3 estados que um utilizador pode usar:
 \newline
 \begin{itemize}
 \item Utilizador não registado
@@ -238,14 +240,15 @@ Esse boolean diz-nos se o utilizador em questão já passou pelo estado de regis
 ~\\
 \newline
 \begin{quote}
-NOTA: quando construímos um utilizador (vendedor ou comprador) vazio, a flag registado começa sempre com o valor "false".
+NOTA: quando construímos um utilizador (vendedor ou comprador) vazio, a flag registado começa sempre com o valor 'false' .
 \end{quote}
 
 ~\\
 
-Temos metido um apontador para a nossa principal "base de dados" (se é que podemos chamar assim). 
+Temos dentro da classe 'Utilizadores' um apontador para a nossa principal base de dados 'Imobiliaria' . 
 É também uma declaração importante na nossa superclasse que se deixássemos de lado, provavelmente não funcionaria da maneira que queriamos (é de notar que os principais métodos de procura de imóveis estão quase todas nos utilizadores).
 \newline
+
 Esse apontador é feito usando:
 \newline
 \begin{code}
@@ -253,11 +256,13 @@ Esse apontador é feito usando:
     private Imobiliaria imob;
 ...
 \end{code}
-que nos permite então aceder sem problemas aos métodos principais da nossa classe Imobiliaria.
+que permite então aceder sem problemas aos métodos principais da nossa classe 'Imobiliaria'.
 \newline
-O resto das variáveis que usamos na superclasse Utilizadores é bastante normal e o básico para o funcionamento do projeto ImOObiliaria.
+
+O resto das variáveis que são usadas na superclasse 'Utilizadores' é bastante normal e o básico para o funcionamento do projeto 'ImOObiliaria'.
 \newline
-As subclasses tem pouco para mostrar em código, mas são extremamente precisas para que haja correta gestão dos dados.
+
+As subclasses tem pouco para mostrar em código, mas são extremamente precisas para que haja uma correta gestão dos dados.
 \pagebreak
 
 \textbf{Vendedor}
@@ -265,18 +270,16 @@ As subclasses tem pouco para mostrar em código, mas são extremamente precisas 
 
 Um vendedor registado consegue ter permissões avaçandas ao programa, nomeadamente aceder ao menu exclusivo dos vendedores e a algumas opções do menu dos leilões. \\
 
-A classe Vendedor não contém grandes operações. Tem em vez disso dois portfólios distintos: um para armazenar os imóveis que estão em venda na base de dados e outro para\\
-registar os imóveis que já foram vendidos.
+A classe 'Vendedor' não contém grandes operações. Tem em vez disso dois portfólios distintos: um para armazenar os imóveis que estão em venda na base de dados e outro para registar os imóveis que já foram vendidos.
 ~\\
 
 O vendedor também tem a possibilidade de remover diretamente um imóvel da base de dados, utilizando para isso o apontador para a classe Imobiliaria.
-
+~\\
 
 \textbf{Comprador}
 ~\\
 
-Este estado também tem as suas únicas permissões não tão avançadas como um vendedor. Um comprador pode aceder ao menu exclusivo dos compradores, 
-onde a criação, edição ou a eliminação de todos os imóveis não são permitidos.
+Este estado também tem as suas únicas permissões não tão avançadas como um vendedor. Um comprador pode aceder ao menu exclusivo dos compradores, onde a criação, edição ou a eliminação de todos os imóveis não são permitidos.
 \\
 
 Um comprador também consegue ter acesso aos leilões. No entanto dar início a um dado leilão ou encerrar um leilão não são operações permitidas.
@@ -284,7 +287,7 @@ Um comprador também consegue ter acesso aos leilões. No entanto dar início a 
 O comprador, ao contrário do vendedor, não tem nenhum portfólio de imóveis em venda ou vendidos mas sim uma lista de imóveis da escolha do comprador que possa gostar mais.
 \\
 
-A classe comprador é das únicas classes que recorre à ordenação de listas, recorrendo para isso às classes Comparator que estão situadas no projeto.
+A classe 'Comprador' é das únicas classes que recorre à ordenação de listas, recorrendo para isso às classes 'Comparator' que estão situadas no projeto.
 ~\\
 \newline
 \begin{code}
@@ -309,18 +312,18 @@ Esta classe é a classe que provavelmente tem o maior número de métodos do nos
 As variáveis de instância desta classe são as que fazem o armazenamento de grande parte dos dados dos imóveis, utilizadores e um feed de notícias . 
 \\
 
-Quase todos os nossos getters recorrem a uma lista ou map auxiliares, de forma a que retornemos corretamente os dados enquanto que os setters são práticamente normais.
+Quase todos os 'getters' recorrem a uma lista ou map auxiliares, de forma a que retornemos corretamente os dados enquanto que os setters são práticamente normais.
 \\
 
-A classe faz-nos a gestão do inicio e do encerramento da sessão atual, não continuando se a base de dados dos utilizadores não tiver conteúdo ou se nenhuma sessão estiver ativa respetivamente.
+A classe faz a gestão do inicio e do encerramento da sessão atual, não continuando se a base de dados dos utilizadores não tiver conteúdo ou se nenhuma sessão estiver ativa respetivamente.
 \\
 
-Ao iniciarmos um programa, nós temos que criar um ponto em que haja um tipo de utilizador que não seja abstrato (pois não podemos instanciar uma classe abstrata) nem esteja registado.\\
+Ao iniciarmos um programa, temos que criar um ponto em que haja um tipo de utilizador que não seja abstrato (pois não podemos instanciar uma classe abstrata) nem esteja registado.\\
 
-Para isso recorremos a uma maneira de simular o que queriamos, criando um método init que inicia um Comprador sem qualquer informação mas que esteja ligado à nossa base de dados, em que a flag registado seja false para não ter permissões aos nossos menus especiais.
+Para isso recorre-se a uma maneira de simular o que queriamos, criando um método init que inicia um Comprador sem qualquer informação mas que esteja ligado à base de dados, em que a flag registado seja 'false'para não ter permissões aos nossos menus especiais.
 \newline
 \begin{code}
-   public void init()\{atual = new Comprador ("","","","","",this,false);\}
+   public void init()\{atual = new Comprador (',',',',',this,false);\}
 \end{code}
 ~\\
 
@@ -336,15 +339,15 @@ Os imóveis poderão ser registados, editados, listados ou removidos através de
 O algoritmo do mapeamento de imóveis e do top de visitas dos imóveis também foi inserido nesta classe e recorre a apontadores dos dois tipos de utilizadores, para que possámos relacionar as visitas que os compradores ou os vendedores fazem aos imóveis, ou relacionar os vendedores e os seus respetivos imóveis em venda/reservados/vendidos.
 ~\\
 
-Dois dos métodos mais importantes desta classe são os que nos permite a função de carregamento ou de salvaguarda de objetos, ou seja, guardar o estado inteiro do nosso programa.
-Para isso usamos então as classes predefinidas de JAVA ObjectInputStream e ObjectOutputStream. 
+Dois dos métodos mais importantes desta classe são os que permite a função de carregamento ou de salvaguarda de objetos, ou seja, guardar o estado inteiro do nosso programa.
+Para isso usa-se então as classes predefinidas de JAVA ObjectInputStream e ObjectOutputStream. 
 ~\\
 
 \textbf{ImOObiliaria (Main)}
 \newline
 ~\\
 
-Este é o nosso arranque, a classe que tem o controlo dos principais menus de gestão do utilizador, de pesquisa, de vendedor e comprador, do leilão e do mapeamento de imóveis mais o top das consultas de imóveis do programa.
+Este é o motor de arranque, a classe que tem o controlo dos principais menus de gestão do utilizador, de pesquisa, de vendedor e comprador, do leilão e do mapeamento de imóveis mais o top das consultas de imóveis do programa.
 
 ~\\
 
@@ -378,7 +381,7 @@ evitando que se fechará abruptamente gerando um erro.
 \newline
 ~\\
 
-Leilões é a nossa classe que faz a gestão de um leilão. O vendedor tem a oportunidade de meter o seu imóvel em leilão disponível nas horas que o vendedor quiser. O vendedor tem também o poder de encerrar o leilão quando quiser através de uma opção do menu.
+Leilões é a classe que faz a gestão de um leilão. O vendedor tem a oportunidade de meter o seu imóvel em leilão disponível nas horas que o vendedor quiser. O vendedor tem também o poder de encerrar o leilão quando quiser através de uma opção do menu.
 ~\\
 
 Um comprador pode entrar no leilão e pode escolher entre duas opções:
@@ -391,7 +394,7 @@ NOTA: Independentemente da opção que o comprador escolheu, ele não pode licit
 \end{quote}
 ~\\
 
-Para que esta classe funcione perfeitamente, tivemos de implementar as seguintes partes da API do JAVA:
+Para que esta classe funcione perfeitamente, temos de implementar as seguintes partes da API do JAVA:
 \newline
 \begin{code}
 import java.util.Timer;
@@ -403,6 +406,7 @@ import java.util.Date;
 import java.util.TimerTask;
 \end{code}
 ~\\
+
 \textbf{Aposta}
 \newline
 ~\\
@@ -418,20 +422,20 @@ Ela é constituída pela identificação do comprador em questão, da informaç�
 \newline
 ~\\
 
-Esta classe é muito básica, dando-nos apenas o número de visualizações que cada imóvel da base de dados tem.
+Esta classe é muito básica, dando apenas o número de visualizações que cada imóvel da base de dados tem.
 Cada consulta começa sem nenhuma visualização como é obvio.
 \begin{code}
 public Consulta()\{
         this.contagem = 0;
     \}
 \end{code}
-
+~\\
 
 \textbf{Feed}
 \newline
 ~\\
 
-Esta classe contém a nossa queue de 10 posições que vai atualizando ao longo das movimentações que fazemos aos dados.
+Esta classe contém a queue de 10 posições que vai atualizando ao longo das movimentações que fazemos aos dados.
 ~\\
 
 Quando a queue chega aos 10 elementos e queremos adicionar mais um elemento de informação, a queue elimina automaticamente o último elemento que tem.
@@ -458,7 +462,7 @@ public class TipoInvalidoException extends Exception
 \end{code}
 ~\\
 
-Cada operação arriscada é acompanhada com um mecanismo chamado 'try'. Este mecanismo não funciona sem 'catch', que faz com que detete erros no código. Quem "dispara esse alarme" é o 'throw', que interage com o 'catch', fazendo com que o código pare de executar o código dentro do try, fazendo um "bypass" a essa secção e executando o código dentro da dada Exception. 
+Cada operação arriscada é acompanhada com um mecanismo chamado 'try'. Este mecanismo não funciona sem 'catch', que faz com que detete erros no código. Quem 'dispara esse alarme' é o 'throw', que interage com o 'catch', fazendo com que o código pare de executar o código dentro do try, fazendo um 'bypass' a essa secção e executando o código dentro da dada Exception. 
 ~\\
 
 Quando não ocorre um erro grave no código, o programa executa na mesma o código dentro do try/catch e segue normalmente.  
@@ -475,7 +479,7 @@ As principais dificuldades que não foram superadas neste projeto:
 \begin{itemize}
 \item UTF-8 (utilizaÃ§Ã£o de caract§Ã£res especiais).
 \item Leilões (comprador apostar de x em x minutos).
-\item Bug estupido do double mostrar 0.0 em vez do valor devido.
+\item Bug de uma variável 'double'  mostrar 0.0 em vez do valor devido.
 \item Top X de imóveis não foi inteiramente implementado.
 \end{itemize}
 As dificuldades que foram superadas:
@@ -486,6 +490,11 @@ As dificuldades que foram superadas:
 \item Comprar um imóvel não alterava o estado do imóvel para reservado.
 \end{itemize}
 
-Não podemos deixar de dizer que este trabalho foi obviamente produtivo e só nos trouxe vantagens para conhecer o mundo dos Exceptions, visto que começamos a "atinar" com eles. A mesma coisa aconteceu com as Interfaces, que eram demasiado "abstratas" para nós antes deste projeto.
+Não podemos deixar de dizer que este trabalho foi obviamente produtivo e só nos trouxe vantagens para conhecer o mundo dos Exceptions, visto que começamos a percebê-los melhor. A mesma coisa aconteceu com as Interfaces, que eram demasiado 'abstratas' para nós antes deste projeto.
+
+~\\
+~\\
+
+\includegraphics[scale=0.4]{005.png}	
 
 \end{document}
