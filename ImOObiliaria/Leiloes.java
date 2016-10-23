@@ -29,7 +29,7 @@ public class Leiloes
         msFinal = new Date();
         timer = new Timer ();
         msFinal.setTime(msFinal.getTime() + horas*1000*60*60);
-        timer.schedule(new TimeoutLeilao(), horas*1000*60 /* *24 (demora horas reais se descomentar)*/ );
+        timer.schedule(new TimeoutLeilao(), horas*1000*60*24);
 
     }
     

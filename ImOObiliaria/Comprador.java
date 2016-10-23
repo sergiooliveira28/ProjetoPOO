@@ -52,7 +52,7 @@ public class Comprador extends Utilizadores
     
     public TreeSet <Imovel> getFavoritos () //throws SemAutorizacaoException{
     {
-        TreeSet <Imovel> aux = new TreeSet <Imovel> (new ImovelStringComparator ());
+        TreeSet <Imovel> aux = new TreeSet <Imovel> (new ImovelStringComparator ()); //não é imovelstringcomparator
         
         aux.addAll(lstImoveis);
         

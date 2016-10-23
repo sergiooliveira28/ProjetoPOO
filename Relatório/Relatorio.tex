@@ -81,7 +81,7 @@ A linguagem de programação usada foi a linguagem JAVA, uma das principais ling
      %   \centering
 %\includegraphics[scale=0.38]{}
 %\end{figure*}
-\includegraphics[scale=0.27]{004.png}	
+\includegraphics[scale=0.27]{esquema.png}	
 \pagebreak
 
 \section{Primeiras classes}
@@ -218,7 +218,10 @@ A classe 'Pesquisas'  será útil para pesquisar o número de quartos ou o núme
 \pagebreak
 
 \textbf{Utilizadores}
-~\\
+\newline
+\newline
+\includegraphics[scale=0.2]{006.png}	
+
 
 Implementámos 3 outras classes para criar um cenário de gestão de utilizadores. 
 \newline
@@ -263,6 +266,19 @@ O resto das variáveis que são usadas na superclasse 'Utilizadores' são bastan
 \newline
 
 As subclasses tem pouco para mostrar em código, mas são extremamente precisas para que haja uma correta gestão dos dados.
+~\\
+
+\textbf{Utilizador não registado}
+~\\
+
+Este tipo de utilizador tem acesso à nossa aplicação. No entanto, tem apenas a possibilidade de listar e pesquisar imóveis, fazer o mapeamento dos dados e gerar o top de imóveis visitados.
+~\\
+
+\includegraphics[scale=0.5]{007.png}	
+\\
+\begin{footnotesize}
+* Mostramos através da imagem que este utilizador tem acesso restrito na nossa aplicação, podendo contudo para ter um leque maior de opções, acedendo à opção de gerir utilizadores, registando-se e fazendo login.
+\end{footnotesize}
 \pagebreak
 
 \textbf{Vendedor}
@@ -270,11 +286,22 @@ As subclasses tem pouco para mostrar em código, mas são extremamente precisas 
 
 Um vendedor registado consegue ter permissões avaçandas ao programa, nomeadamente aceder ao menu exclusivo dos vendedores e a algumas opções do menu dos leilões. \\
 
-A classe 'Vendedor' não contém grandes operações. Tem em vez disso dois portfólios distintos: um para armazenar os imóveis que estão em venda na base de dados e outro para registar os imóveis que já foram vendidos.
+A classe 'Vendedor' não contém grandes operações. Tem em vez disso dois portfólios distintos (implementados por dois ArrayLists): um para armazenar os imóveis que estão em venda na base de dados e outro para registar os imóveis que já foram vendidos.
+\begin{code}
+private ArrayList<Imovel> lstImoveisPort;
+private ArrayList<Imovel> lstImoveisVendidos;
+\end{code}
+
 ~\\
 
 O vendedor também tem a possibilidade de remover diretamente um imóvel da base de dados, utilizando para isso o apontador para a classe Imobiliaria.
 ~\\
+\includegraphics[scale=0.5]{008.png}
+\\
+\begin{footnotesize}
+* Menu de vendedor, com todas as opções disponíveis adicionais às de um utilizador não registado
+\end{footnotesize}
+\pagebreak
 
 \textbf{Comprador}
 ~\\
@@ -297,7 +324,11 @@ A classe 'Comprador' é das únicas classes que recorre à ordenação de listas
 
 Ambas as classes recorrem ao método clone() para no caso de querermos registar informação de um dado utilizador sem alterar absolutamente nada do objeto original.
 
-
+\includegraphics[scale=0.5]{009.png}
+\\
+\begin{footnotesize}
+* Menu de comprador, também com todas as opções disponíveis adicionais às de um utilizador não registado
+\end{footnotesize}
 \pagebreak
 %-------------------TUDO BEM POR AQUI ----------------------------------------------------------------------
 
@@ -308,6 +339,15 @@ Ambas as classes recorrem ao método clone() para no caso de querermos registar 
 
 Esta classe é a classe que provavelmente tem o maior número de métodos do nosso projeto (a grande responsável pela criação de dados).
 \\
+
+Implementamos esta base de dados com recurso a dois HashMap's, um responsável pelo tratamento dos utilizadores e outro pelos imóveis. 
+Como um HashMap tem por predefinição a cada objeto uma referência (chave), decidimos implementar como chave no HashMap utilizadores o email de cada utilizador e a morada de cada imóvel (chave única) no HashMap de imóveis.
+~\\
+\begin{code}
+private HashMap<String,Imovel> imovel;
+private HashMap<String,Utilizadores> utilizadores;
+\end{code}
+~\\
 
 As variáveis de instância desta classe são as que fazem o armazenamento de grande parte dos dados dos imóveis, utilizadores e um feed de notícias . 
 \\
@@ -339,10 +379,22 @@ Os imóveis poderão ser registados, editados, listados ou removidos através de
 O algoritmo do mapeamento de imóveis e do top de visitas dos imóveis também foi inserido nesta classe e recorre a apontadores dos dois tipos de utilizadores, para que possámos relacionar as visitas que os compradores ou os vendedores fazem aos imóveis, ou relacionar os vendedores e os seus respetivos imóveis em venda/reservados/vendidos.
 ~\\
 
+\includegraphics[scale=0.4]{012.png}
+
+\begin{footnotesize}
+* Implementado um TreeSet e um HashSet, fazemos a ordenação do Top de imóveis visitados.
+\end{footnotesize}
+
+\pagebreak
+~\\
+
 Dois dos métodos mais importantes desta classe são os que permitem a função de carregamento ou de salvaguarda de objetos, ou seja, guardar o estado inteiro do nosso programa.
 Para isso usa-se então as classes predefinidas de JAVA ObjectInputStream e ObjectOutputStream. 
 ~\\
 
+\includegraphics[scale=0.4]{010.png}
+
+\pagebreak
 \textbf{ImOObiliaria (Main)}
 \newline
 ~\\
@@ -434,11 +486,14 @@ public Consulta()\{
 \textbf{Feed}
 \newline
 ~\\
-
-Esta classe contém a queue de 10 posições que vai atualizando ao longo das movimentações que fazemos aos dados.
+\includegraphics[scale=0.5]{011.png}
 ~\\
 
+\begin{footnotesize}
+* Esta classe contém a queue de 10 posições que vai atualizando ao longo das movimentações que fazemos aos dados.
 Quando a queue chega aos 10 elementos e queremos adicionar mais um elemento de informação, a queue elimina automaticamente o último elemento que tem.
+\end{footnotesize}
+
 \pagebreak
 
 \section{Quando o código rebenta...}

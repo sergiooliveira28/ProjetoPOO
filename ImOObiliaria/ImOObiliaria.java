@@ -966,7 +966,7 @@ public class ImOObiliaria
     }
     
     public static void consultas(){
-        int escolha;
+        int escolha, cont = 1;
         List <Consulta> a = new ArrayList <Consulta> ();
         a = imobi.getConsultas();
         System.out.println(" | A mostrar 10 últimos imóveis consultados\n");
@@ -977,8 +977,8 @@ public class ImOObiliaria
         System.out.println(" | Insira o nº de imóveis que quer ver no topo");
         escolha = Input.lerInt();
         System.out.println(" | _______ A MOSTRAR O TOP " + escolha + " de imóveis _______\n");
-        for (String s : imobi.getTopImoveis(escolha)){
-            System.out.println(" | " +  s.toString());
+        for (Imovel i : imobi.getTopImoveis(escolha)){
+            System.out.println(" | " + cont++ + "º" +  i.getMorada().toString());
         }
     }
     

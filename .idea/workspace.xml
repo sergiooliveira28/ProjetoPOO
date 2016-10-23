@@ -2,16 +2,175 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4021ea19-e69b-477a-88a6-e737b3d43c54" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Teste.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Projecto.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Relatório/004.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Apartamento.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Apartamento.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Aposta.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Aposta.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ComparaUtilizadores.class" afterPath="$PROJECT_DIR$/ImOObiliaria/ComparaUtilizadores.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Comprador.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Comprador.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Consulta.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Consulta.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/EstadoInvalidoException.class" afterPath="$PROJECT_DIR$/ImOObiliaria/EstadoInvalidoException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Feed.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Feed.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Habitavel.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Habitavel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImOObiliaria.class" afterPath="$PROJECT_DIR$/ImOObiliaria/ImOObiliaria.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Imobiliaria.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Imobiliaria.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Imovel.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Imovel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelComparator.class" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelComparator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelExisteException.class" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelExisteException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelInexistenteException.class" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelInexistenteException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelStringComparator.class" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelStringComparator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/InitApp.class" afterPath="$PROJECT_DIR$/ImOObiliaria/InitApp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Input.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Input.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/LeilaoTerminadoException.class" afterPath="$PROJECT_DIR$/ImOObiliaria/LeilaoTerminadoException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Leiloes$TimeoutLeilao.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Leiloes$TimeoutLeilao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Leiloes.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Leiloes.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Loja.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Loja.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/LojaHabitavel.class" afterPath="$PROJECT_DIR$/ImOObiliaria/LojaHabitavel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Moradia.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Moradia.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Pesquisas.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Pesquisas.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Projecto.pdf" afterPath="$PROJECT_DIR$/ImOObiliaria/Projecto.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/SemAutorizacaoException.class" afterPath="$PROJECT_DIR$/ImOObiliaria/SemAutorizacaoException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Terreno.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Terreno.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/TesteOriginal.class" afterPath="$PROJECT_DIR$/ImOObiliaria/TesteOriginal.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/TipoInvalidoException.class" afterPath="$PROJECT_DIR$/ImOObiliaria/TipoInvalidoException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/UtilizadorExistenteException.class" afterPath="$PROJECT_DIR$/ImOObiliaria/UtilizadorExistenteException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/UtilizadorInexistenteException.class" afterPath="$PROJECT_DIR$/ImOObiliaria/UtilizadorInexistenteException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Utilizadores.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Utilizadores.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Vendedor.class" afterPath="$PROJECT_DIR$/ImOObiliaria/Vendedor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/resources/inherit.gif" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/resources/inherit.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/000.png" afterPath="$PROJECT_DIR$/Relatório/000.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/001.png" afterPath="$PROJECT_DIR$/Relatório/001.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/002.png" afterPath="$PROJECT_DIR$/Relatório/002.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/003.png" afterPath="$PROJECT_DIR$/Relatório/003.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/004.xcf" afterPath="$PROJECT_DIR$/Relatório/004.xcf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/005.png" afterPath="$PROJECT_DIR$/Relatório/005.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/Relatorio.bbl" afterPath="$PROJECT_DIR$/Relatório/Relatorio.bbl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/Relatorio.dvi" afterPath="$PROJECT_DIR$/Relatório/Relatorio.dvi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/Relatorio.pdf" afterPath="$PROJECT_DIR$/Relatório/Relatorio.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/Relatorio.synctex.gz" afterPath="$PROJECT_DIR$/Relatório/Relatorio.synctex.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Apartamento.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Apartamento.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Apartamento.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Apartamento.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Aposta.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Aposta.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Aposta.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Aposta.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ComparaUtilizadores.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/ComparaUtilizadores.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ComparaUtilizadores.java" afterPath="$PROJECT_DIR$/ImOObiliaria/ComparaUtilizadores.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Comprador.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Comprador.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Comprador.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Comprador.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Consulta.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Consulta.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Consulta.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Consulta.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/EstadoInvalidoException.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/EstadoInvalidoException.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/EstadoInvalidoException.java" afterPath="$PROJECT_DIR$/ImOObiliaria/EstadoInvalidoException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Feed.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Feed.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Feed.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Feed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Habitavel.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Habitavel.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Habitavel.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Habitavel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImOObiliaria.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/ImOObiliaria.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImOObiliaria.java" afterPath="$PROJECT_DIR$/ImOObiliaria/ImOObiliaria.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Imobiliaria.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Imobiliaria.ctxt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Imobiliaria.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Imobiliaria.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Imovel.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Imovel.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Imovel.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Imovel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelComparator.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelComparator.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelComparator.java" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelComparator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelExisteException.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelExisteException.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelExisteException.java" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelExisteException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelInexistenteException.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelInexistenteException.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelInexistenteException.java" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelInexistenteException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelStringComparator.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelStringComparator.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/ImovelStringComparator.java" afterPath="$PROJECT_DIR$/ImOObiliaria/ImovelStringComparator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/InitApp.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/InitApp.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/InitApp.java" afterPath="$PROJECT_DIR$/ImOObiliaria/InitApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Input.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Input.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Input.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Input.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/LeilaoTerminadoException.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/LeilaoTerminadoException.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/LeilaoTerminadoException.java" afterPath="$PROJECT_DIR$/ImOObiliaria/LeilaoTerminadoException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Leiloes.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Leiloes.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Leiloes.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Leiloes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Loja.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Loja.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Loja.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Loja.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/LojaHabitavel.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/LojaHabitavel.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/LojaHabitavel.java" afterPath="$PROJECT_DIR$/ImOObiliaria/LojaHabitavel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Moradia.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Moradia.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Moradia.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Moradia.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Pesquisas.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Pesquisas.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Pesquisas.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Pesquisas.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/README.TXT" afterPath="$PROJECT_DIR$/ImOObiliaria/README.TXT" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/SemAutorizacaoException.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/SemAutorizacaoException.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/SemAutorizacaoException.java" afterPath="$PROJECT_DIR$/ImOObiliaria/SemAutorizacaoException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Terreno.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Terreno.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Terreno.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Terreno.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/TesteOriginal.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/TesteOriginal.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/TesteOriginal.java" afterPath="$PROJECT_DIR$/ImOObiliaria/TesteOriginal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/TipoInvalidoException.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/TipoInvalidoException.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/TipoInvalidoException.java" afterPath="$PROJECT_DIR$/ImOObiliaria/TipoInvalidoException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/UtilizadorExistenteException.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/UtilizadorExistenteException.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/UtilizadorExistenteException.java" afterPath="$PROJECT_DIR$/ImOObiliaria/UtilizadorExistenteException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/UtilizadorInexistenteException.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/UtilizadorInexistenteException.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/UtilizadorInexistenteException.java" afterPath="$PROJECT_DIR$/ImOObiliaria/UtilizadorInexistenteException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Utilizadores.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Utilizadores.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Utilizadores.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Utilizadores.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Vendedor.ctxt" afterPath="$PROJECT_DIR$/ImOObiliaria/Vendedor.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/Vendedor.java" afterPath="$PROJECT_DIR$/ImOObiliaria/Vendedor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Apartamento.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Apartamento.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/ComparaUtilizadores.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/ComparaUtilizadores.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Comprador.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Comprador.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Consulta.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Consulta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/EstadoInvalidoException.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/EstadoInvalidoException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Feed.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Feed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Habitavel.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Habitavel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/ImOObiliaria.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/ImOObiliaria.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Imobiliaria.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Imobiliaria.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Imovel.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Imovel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/ImovelComparator.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/ImovelComparator.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/ImovelExisteException.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/ImovelExisteException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/ImovelInexistenteException.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/ImovelInexistenteException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/ImovelStringComparator.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/ImovelStringComparator.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Input.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Input.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/LeilaoTerminadoException.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/LeilaoTerminadoException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Leiloes.TimeoutLeilao.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Leiloes.TimeoutLeilao.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Leiloes.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Leiloes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Loja.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Loja.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/LojaHabitavel.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/LojaHabitavel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Moradia.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Moradia.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Pesquisas.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Pesquisas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/SemAutorizacaoException.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/SemAutorizacaoException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Terreno.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Terreno.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/TesteOriginal.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/TesteOriginal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/TipoInvalidoException.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/TipoInvalidoException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/UtilizadorExistenteException.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/UtilizadorExistenteException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/UtilizadorInexistenteException.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/UtilizadorInexistenteException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Utilizadores.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Utilizadores.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/Vendedor.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/Vendedor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/allclasses-frame.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/allclasses-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/allclasses-noframe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/constant-values.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/constant-values.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/help-doc.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/help-doc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/index-all.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/index-all.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/index.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/logfile.txt" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/logfile.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/overview-tree.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/overview-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/package-frame.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/package-list" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/package-list" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/package-summary.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/package-tree.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/serialized-form.html" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/serialized-form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/doc/stylesheet.css" afterPath="$PROJECT_DIR$/ImOObiliaria/doc/stylesheet.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImOObiliaria/package.bluej" afterPath="$PROJECT_DIR$/ImOObiliaria/package.bluej" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjetoPOO.iml" afterPath="$PROJECT_DIR$/ProjetoPOO.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/Relatorio.aux" afterPath="$PROJECT_DIR$/Relatório/Relatorio.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/Relatorio.blg" afterPath="$PROJECT_DIR$/Relatório/Relatorio.blg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/Relatorio.log" afterPath="$PROJECT_DIR$/Relatório/Relatorio.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/Relatorio.out" afterPath="$PROJECT_DIR$/Relatório/Relatorio.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatório/Relatorio.tex" afterPath="$PROJECT_DIR$/Relatório/Relatorio.tex" />
     </list>
     <ignored path="ProjetoPOO.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,13 +182,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="ProjetoPOO" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Apartamento.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ImOObiliaria/Apartamento.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,10 +212,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="60" />
-    <option name="y" value="63" />
-    <option name="width" value="1297" />
-    <option name="height" value="704" />
+    <option name="y" value="24" />
+    <option name="width" value="1366" />
+    <option name="height" value="687" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -70,7 +241,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -89,17 +260,97 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjetoPOO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjetoPOO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Relatório" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjetoPOO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjetoPOO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImOObiliaria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -125,6 +376,22 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -144,6 +411,73 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ProjetoPOO" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -182,8 +516,38 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -192,35 +556,38 @@
       <changelist id="4021ea19-e69b-477a-88a6-e737b3d43c54" name="Default" comment="" />
       <created>1463413632348</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1463413632348</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="60" y="63" width="1297" height="704" extended-state="0" />
+    <frame x="0" y="24" width="1366" height="687" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30983606" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24903624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23645681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -237,5 +604,70 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ImOObiliaria/Apartamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImOObiliaria/Apartamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImOObiliaria/Apartamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImOObiliaria/Apartamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

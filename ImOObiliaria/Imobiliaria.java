@@ -1,6 +1,7 @@
 import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.TreeSet;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -308,18 +309,25 @@ public class Imobiliaria implements Serializable
    }
    */
 
-   public Set<String> getTopImoveis (int i){
-       HashSet <String> topImoveis = new HashSet <String>();
+   public Set<Imovel> getTopImoveis (int i){
+       TreeSet <Imovel> topImoveis = new TreeSet <Imovel>(new TopComparator ());
+       HashSet <Imovel> topImoveisAux = new HashSet <Imovel>();
        try{
            if (imovel.isEmpty()) {throw new ImovelInexistenteException ("Não existem imóveis nos anúncios. ");}
            else {
            for (Imovel im : this.imovel.values()){
-                if (i>0) topImoveis.add(im.getMorada());
-                i--;
+                topImoveis.add(im);
            }
+           for (Imovel im : topImoveis){
+               if (i>0){ 
+                   topImoveisAux.add(im);
+                   
+               }
+               i--;
+            }
         }
        }catch (ImovelInexistenteException e) {System.out.println(e.getMessage());}
-       return topImoveis;
+       return topImoveisAux;
     }
    
    public Map<Imovel,Vendedor> getMapeamentoImoveis(){
@@ -478,7 +486,6 @@ public class Imobiliaria implements Serializable
         try{
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fich));
             this.nome = (String) ois.readObject();
-            //this.inicio = (Date) ois.readObject();
             this.imovel = (HashMap<String,Imovel>) ois.readObject();
             this.utilizadores = (HashMap<String,Utilizadores>) ois.readObject();
             this.feed = (Feed) ois.readObject();
@@ -493,7 +500,6 @@ public class Imobiliaria implements Serializable
    public void gravaDados(String fich) throws Exception{
         ObjectOutputStream ficheiro = new ObjectOutputStream(new FileOutputStream(fich));
         ficheiro.writeObject((String) this.nome);
-        //ficheiro.writeObject(this.inicio);
         ficheiro.writeObject((HashMap<String,Imovel>) this.imovel);
         ficheiro.writeObject((HashMap<String,Utilizadores>) this.utilizadores);
         ficheiro.writeObject((Feed) this.feed);
