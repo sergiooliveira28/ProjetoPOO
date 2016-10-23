@@ -1,6 +1,9 @@
 # ImOObiliaria
 Um projeto da treta feito por nada mais nada menos que o grande Mossoró e o seu companheiro Sleep Dogg
 
+# Done
+
+
 # 20/05 (sexta-feira) - A fase de entregas encerra às 24h.
 
 # 23/05 a 31/05 - Discussão dos trabalhos
@@ -24,7 +27,7 @@ Bom trabalho,
 
 Creissac
 
-# _______ Classe Teste 9 Maio _____________
+# _______ Classe Teste 9 Maio (corrigido) _____________
 
     public void mainTest() {
         imo = new Imoobiliaria();
